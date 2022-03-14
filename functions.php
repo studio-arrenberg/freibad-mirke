@@ -1,195 +1,109 @@
 <?php
+
 /**
- * Gather all bits and pieces together.
- * If you end up having multiple post types, taxonomies,
- * hooks and functions - please split those to their
- * own files under /inc and just require here.
+ * Theme setup.
+ */
+function tailpress_setup() {
+	add_theme_support( 'title-tag' );
+
+	register_nav_menus(
+		array(
+			'primary' => __( 'Primary Menu', 'tailpress' ),
+		)
+	);
+
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		)
+	);
+
+    add_theme_support( 'custom-logo' );
+	add_theme_support( 'post-thumbnails' );
+
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'wp-block-styles' );
+
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'css/editor-style.css' );
+}
+
+add_action( 'after_setup_theme', 'tailpress_setup' );
+
+/**
+ * Enqueue theme assets.
+ */
+function tailpress_enqueue_scripts() {
+	$theme = wp_get_theme();
+
+	wp_enqueue_style( 'tailpress', tailpress_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
+	wp_enqueue_script( 'tailpress', tailpress_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+}
+
+add_action( 'wp_enqueue_scripts', 'tailpress_enqueue_scripts' );
+
+/**
+ * Get asset path.
  *
- * @Date: 2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-02-10 15:55:37
+ * @param string  $path Path to asset.
  *
- * @package air-light
+ * @return string
  */
+function tailpress_asset( $path ) {
+	if ( wp_get_environment_type() === 'production' ) {
+		return get_stylesheet_directory_uri() . '/' . $path;
+	}
 
-namespace Air_Light;
+	return add_query_arg( 'time', time(),  get_stylesheet_directory_uri() . '/' . $path );
+}
 
 /**
- * The current version of the theme.
+ * Adds option 'li_class' to 'wp_nav_menu'.
+ *
+ * @param string  $classes String of classes.
+ * @param mixed   $item The curren item.
+ * @param WP_Term $args Holds the nav menu arguments.
+ *
+ * @return array
  */
-define( 'AIR_LIGHT_VERSION', '8.3.2' );
+function tailpress_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
+	if ( isset( $args->li_class ) ) {
+		$classes[] = $args->li_class;
+	}
 
-// We need to have some defaults as comments or empties so let's allow this:
-// phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
+	if ( isset( $args->{"li_class_$depth"} ) ) {
+		$classes[] = $args->{"li_class_$depth"};
+	}
+
+	return $classes;
+}
+
+add_filter( 'nav_menu_css_class', 'tailpress_nav_menu_add_li_class', 10, 4 );
 
 /**
- * Theme settings
+ * Adds option 'submenu_class' to 'wp_nav_menu'.
+ *
+ * @param string  $classes String of classes.
+ * @param mixed   $item The curren item.
+ * @param WP_Term $args Holds the nav menu arguments.
+ *
+ * @return array
  */
-add_action( 'after_setup_theme', function() {
-  $theme_settings = [
-    /**
-     * Theme textdomain
-     */
-    'textdomain' => 'air-light',
+function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
+	if ( isset( $args->submenu_class ) ) {
+		$classes[] = $args->submenu_class;
+	}
 
-    /**
-     * Image and content sizes
-     */
-    'image_sizes' => [
-      'small'   => 300,
-      'medium'  => 700,
-      'large'   => 1200,
-    ],
-    'content_width' => 800,
+	if ( isset( $args->{"submenu_class_$depth"} ) ) {
+		$classes[] = $args->{"submenu_class_$depth"};
+	}
 
-    /**
-     * Logo and featured image
-     */
-    'default_featured_image'  => null,
-    'logo'                    => '/svg/logo.svg',
+	return $classes;
+}
 
-    /**
-     * Custom setting group settings when using Air setting groups plugin.
-     * On multilingual sites using Polylang, translations are handled automatically.
-     */
-    'custom_settings' => [
-      // 'your-custom-setting' => [
-      //   'id' => Your custom setting post id,
-      //   'title' => 'Your custom setting',
-      //   'block-editor' => true,
-      //  ],
-    ],
-
-    'social_media_accounts'  => [
-      // 'twitter' => [
-      //   'title' => 'Twitter',
-      //   'url'   => 'https://twitter.com/digitoimistodude',
-      // ],
-    ],
-
-    /**
-     * Menu locations
-     */
-    'menu_locations' => [
-      'primary' => __( 'Primary Menu', 'air-light' ),
-    ],
-
-    /**
-     * Taxonomies
-     *
-     * See the instructions:
-     * https://github.com/digitoimistodude/air-light#custom-taxonomies
-     */
-    'taxonomies' => [
-      // 'your-taxonomy' => [
-      //   'name' => 'Your_Taxonomy',
-      //   'post_types' => [ 'post', 'page' ],
-      // ],
-    ],
-
-    /**
-     * Post types
-     *
-     * See the instructions:
-     * https://github.com/digitoimistodude/air-light#custom-post-types
-     */
-    'post_types' => [
-      // 'your-post-type' => 'Your_Post_Type',
-    ],
-
-    /**
-     * Gutenberg -related settings
-     */
-    // Register custom ACF Blocks
-    'acf_blocks' => [
-      // [
-      //   'name'           => 'block-file-slug',
-      //   'title'          => 'Block Visible Name',
-      //   // You can safely remove lines below if you find no use for them
-      //   'prevent_cache'  => false, // Defaults to false,
-      //   // Icon defaults to svg file inside svg/block-icons named after the block name,
-      //   // eg. svg/block-icons/block-file-slug.svg
-      //   //
-      //   // Icon setting defines the dashicon equivalent: https://developer.wordpress.org/resource/dashicons/#block-default
-      //   // 'icon'  => 'block-default',
-      // ],
-    ],
-
-    // Custom ACF block default settings
-    'acf_block_defaults' => [
-      'category'          => 'air-light',
-      'mode'              => 'auto',
-      'align'             => 'full',
-      'post_types'        => [
-        'page',
-      ],
-      'supports'          => [
-        'align' => false,
-      ],
-      'render_callback'   => __NAMESPACE__ . '\render_acf_block',
-    ],
-
-    // Restrict to only selected blocks
-    // Set the value to 'all' to allow all blocks everywhere
-   'allowed_blocks' => [
-      'default' => [
-      ],
-      'post' => [
-        'core/archives',
-        'core/audio',
-        'core/buttons',
-        'core/categories',
-        'core/code',
-        'core/column',
-        'core/columns',
-        'core/coverImage',
-        'core/embed',
-        'core/file',
-        'core/freeform',
-        'core/gallery',
-        'core/heading',
-        'core/html',
-        'core/image',
-        'core/latestComments',
-        'core/latestPosts',
-        'core/list',
-        'core/more',
-        'core/nextpage',
-        'core/paragraph',
-        'core/preformatted',
-        'core/pullquote',
-        'core/quote',
-        'core/block',
-        'core/separator',
-        'core/shortcode',
-        'core/spacer',
-        'core/subhead',
-        'core/table',
-        'core/textColumns',
-        'core/verse',
-        'core/video',
-      ],
-    ],
-
-    // If you want to use classic editor somewhere, define it here
-    'use_classic_editor' => [],
-
-    // Add your own settings and use them wherever you need, for example THEME_SETTINGS['my_custom_setting']
-    'my_custom_setting' => true,
-  ];
-
-  $theme_settings = apply_filters( 'air_light_theme_settings', $theme_settings );
-
-  define( 'THEME_SETTINGS', $theme_settings );
-} ); // end action after_setup_theme
-
-/**
- * Required files
- */
-require get_theme_file_path( '/inc/hooks.php' );
-require get_theme_file_path( '/inc/includes.php' );
-require get_theme_file_path( '/inc/template-tags.php' );
-
-// Run theme setup
-add_action( 'init', __NAMESPACE__ . '\theme_setup' );
-add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );
+add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
