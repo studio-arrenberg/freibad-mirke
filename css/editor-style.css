@@ -222,9 +222,9 @@
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 
-.bg-gray-100 {
+.bg-slate-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity))
 }
 
 .bg-gray-900 {
@@ -235,11 +235,6 @@
 .bg-blue-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(147 197 253 / var(--tw-bg-opacity))
-}
-
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity))
 }
 
 .p-4 {
@@ -379,14 +374,14 @@
   color: rgb(75 85 99 / var(--tw-text-opacity))
 }
 
-.text-secondary {
-  --tw-text-opacity: 1;
-  color: rgb(251 127 67 / var(--tw-text-opacity))
-}
-
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(77 186 189 / var(--tw-text-opacity))
+}
+
+.text-secondary {
+  --tw-text-opacity: 1;
+  color: rgb(251 127 67 / var(--tw-text-opacity))
 }
 
 .text-gray-700 {
