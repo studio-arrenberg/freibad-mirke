@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-white text-gray-900 antialiased cursor-default' ); ?>>
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -20,7 +20,7 @@
 	<header>
 
 		<div class="mx-auto container">
-			<div class="lg:flex lg:justify-between lg:items-center border-b py-[20px]">
+			<div class="lg:flex lg:justify-between lg:items-center py-[20px]">
 				<div class="flex justify-between items-center">
 					<div>
 						<?php if ( has_custom_logo() ) { ?>

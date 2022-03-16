@@ -7,11 +7,11 @@
 
 <?php do_action( 'tailpress_content_after' ); ?>
 
-<footer id="colophon" class="site-footer bg-gray-50 py-12" role="contentinfo">
+<footer id="colophon" class="site-footer bg-primary py-12 text-white text-center" role="contentinfo">
 	<?php do_action( 'tailpress_footer' ); ?>
 
-	<div class="container mx-auto text-center text-gray-500">
-		&copy; <?php echo date_i18n( 'Y' );?> - <?php echo get_bloginfo( 'name' );?>
+	<div class="container mx-auto ">
+		&copy; <?php echo date_i18n( 'Y' );?>
 		<?php 
 		wp_nav_menu(
 			array(
@@ -19,15 +19,21 @@
 				'container_class' => 'hidden bg-slate-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 				'menu_class'      => 'lg:flex lg:-mx-4',
 				'theme_location'  => 'secondary',
-				'li_class'        => 'lg:mx-4  text-primary ',
+				'li_class'        => 'lg:mx-4  ',
 				'fallback_cb'     => false,
 			)
 		);
 	?>
 	</div>
-	<div class="inline-block"><b>Förderverein Pro Mirke e.V.</b><br>
-Am Marktweg 43
-42781 Haan-Gruiten</div>
+	<div>
+		
+		<a href="https://www.instagram.com/freibad_mirke/"><span class="dashicons dashicons-instagram text-primary"></span></a>
+	</div>
+	<div class="inline-block">
+		<b>Förderverein Pro Mirke e.V.</b><br>
+		Am Marktweg 43
+		42781 Haan-Gruiten
+	</div>
 	
 </footer>
 

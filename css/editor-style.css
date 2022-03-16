@@ -153,6 +153,10 @@
   cursor: pointer
 }
 
+.cursor-default {
+  cursor: url(../assets/images/ring.svg) 20 20, default
+}
+
 .list-disc {
   list-style-type: disc
 }
@@ -212,9 +216,9 @@
   background-color: rgb(229 231 235 / var(--tw-bg-opacity))
 }
 
-.bg-gray-50 {
+.bg-slate-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity))
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity))
 }
 
 .bg-white {
@@ -222,19 +226,9 @@
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity))
-}
-
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity))
-}
-
-.bg-blue-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity))
 }
 
 .p-4 {
@@ -359,9 +353,9 @@
   color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
-.text-gray-500 {
+.text-primary {
   --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity))
+  color: rgb(77 186 189 / var(--tw-text-opacity))
 }
 
 .text-gray-900 {
@@ -372,11 +366,6 @@
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity))
-}
-
-.text-primary {
-  --tw-text-opacity: 1;
-  color: rgb(77 186 189 / var(--tw-text-opacity))
 }
 
 .text-secondary {
