@@ -73,7 +73,7 @@
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow bg-red-500">
+	<div id="content" class="site-content flex-grow bg-slate-50">
 
 		<?php if ( is_front_page() ) { ?>
 			<!-- Start introduction -->
