@@ -294,11 +294,6 @@
   line-height: 1.75rem
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem
@@ -307,6 +302,11 @@
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem
 }
 
 .text-5xl {
@@ -318,16 +318,12 @@
   font-size: 1.25rem
 }
 
-.font-extrabold {
-  font-weight: 800
-}
-
-.font-light {
-  font-weight: 300
-}
-
 .font-bold {
   font-weight: 700
+}
+
+.font-extrabold {
+  font-weight: 800
 }
 
 .font-medium {
@@ -336,6 +332,10 @@
 
 .font-semibold {
   font-weight: 600
+}
+
+.font-light {
+  font-weight: 300
 }
 
 .uppercase {
@@ -357,11 +357,6 @@
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity))
-}
-
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity))
 }
 
 .text-slate-900 {
