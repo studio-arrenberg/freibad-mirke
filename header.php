@@ -61,7 +61,7 @@
 						'container_class' => 'hidden bg-slate-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 						'menu_class'      => 'lg:flex lg:-mx-4',
 						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-4  text-primary uppercase bold',
+						'li_class'        => 'lg:mx-4  text-slate-900 hover:text-primary uppercase bold ',
 						'fallback_cb'     => false,
 					)
 				);
@@ -70,7 +70,7 @@
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow">
+	<div id="content" class="site-content flex-grow bg-red-500">
 
 		<?php if ( is_front_page() ) { ?>
 			<!-- Start introduction -->
