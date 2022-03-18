@@ -20,9 +20,9 @@
 	<header>
 
 		<div class="mx-auto container">
-			<div class="lg:flex lg:justify-between lg:items-center border-b py-[20px]">
+			<div class="lg:flex lg:justify-between lg:items-center  py-[20px]">
 				<div class="flex justify-between items-center">
-				<div>
+					<div>
 						<svg width="85" height="112" viewBox="0 0 85 112" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M22.532 106.644H47.5763C50.1389 106.644 52.2291 104.668 52.3245 102.206C52.3275 102.148 52.3344 102.09 52.3344 102.031V91.3412H50.3564C50.3564 95.8623 50.3564 99.7937 50.3564 102.205C50.2634 103.612 49.05 104.736 47.5763 104.736H22.532C21.0121 104.736 19.7677 103.541 19.7446 102.072C19.7441 97.3197 19.7431 86.9418 19.7426 77.0205H17.7739V102.031C17.7739 102.045 17.7764 102.059 17.7764 102.073C17.7995 104.597 19.9232 106.644 22.532 106.644Z" fill="#4DBABD"/>
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M50.0495 54.261C49.581 50.4003 48.698 47.6357 48.2432 46.405C47.1982 43.5765 40.1503 29.5716 33.6257 16.6672C31.8344 13.1235 30.2877 10.0639 30.122 9.69251C29.4361 8.15865 28.5029 6.73124 27.6861 5.96503C25.6934 4.09699 23.4571 3.95138 22.8196 3.95138C22.7787 3.95138 22.7454 3.95234 22.7196 3.95282H10.232C10.1907 3.95138 10.1343 3.94995 10.0644 3.94995C9.30203 3.94995 7.37363 4.11704 5.93954 5.66475C4.27355 7.48791 5.16217 10.992 5.26873 11.3858C5.3199 11.5744 5.60672 12.5187 6.30804 14.8288C13.51 38.5466 17.2409 51.4673 17.3996 53.236C17.3996 53.4327 17.3991 53.8414 17.3991 54.42C17.3987 55.0076 17.3987 55.7762 17.3982 56.6986C17.3982 57.7073 17.3977 58.9008 17.3977 60.2341H19.2759C19.2759 59.878 19.2759 59.53 19.2759 59.1953C19.2759 57.8085 19.2759 56.6083 19.2764 55.6497C19.2764 54.7494 19.2768 54.0624 19.2768 53.6299C19.2773 53.438 19.2773 53.2914 19.2773 53.204C19.2815 50.649 7.34875 11.8728 7.07884 10.8779C6.80939 9.88443 6.57326 7.77674 7.30604 6.97424C8.26272 5.94164 9.648 5.85952 10.0644 5.85952C10.1432 5.85952 10.1869 5.86239 10.1869 5.86239H22.752C22.752 5.86239 22.7755 5.86096 22.8196 5.86096C23.1764 5.86096 24.8888 5.93925 26.413 7.36856C26.9332 7.85694 27.7561 9.01509 28.4118 10.4812C29.0639 11.9439 44.9591 42.9463 46.4852 47.0762C46.9921 48.4487 47.6418 50.6586 48.0606 53.5172C48.1563 54.1708 48.2375 54.8615 48.3047 55.58C48.4093 56.7081 48.4732 57.9121 48.4788 59.1867C48.4793 59.2478 48.4816 59.307 48.4816 59.3686C48.4816 59.5892 48.4816 59.8818 48.4816 60.2341H50.3593C50.3593 59.8818 50.3593 59.5887 50.3593 59.3686C50.3589 58.411 50.3241 57.4982 50.2678 56.6227C50.2143 55.7963 50.1401 55.0081 50.0495 54.261Z" fill="#4DBABD"/>
@@ -61,10 +61,10 @@
 				wp_nav_menu(
 					array(
 						'container_id'    => 'primary-menu',
-						'container_class' => 'hidden bg-slate-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+						'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 						'menu_class'      => 'lg:flex lg:-mx-4',
 						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-4  text-slate-900 hover:text-primary uppercase bold ',
+						'li_class'        => ' text-slate-900 hover:text-primary uppercase bold text-2xl md:text-base lg:mx-4',
 						'fallback_cb'     => false,
 					)
 				);
@@ -73,22 +73,22 @@
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow bg-slate-50">
+	<div id="content" class="site-content flex-grow bg-slate-50 text-dark">
 
 		<?php if ( is_front_page() ) { ?>
 			<!-- Start introduction -->
 			<div class="container mx-auto my-12 border-b pb-12">
-				<h1 class="font-bold text-lg text-secondary uppercase">TailPress</h1>
-				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold my-4">Rapidly build your WordPress theme
-					with <a href="https://tailwindcss.com" class="text-primary">Tailwind CSS</a>.</h2>
-				<p class="max-w-screen-lg text-gray-700 text-lg font-medium mb-10">TailPress is your go-to starting
-					point for developing WordPress themes with TailwindCSS and comes with basic block-editor support out
-					of the box.</p>
-				<a href="https://github.com/jeffreyvr/tailpress"
-					class="w-full sm:w-auto flex-none bg-gray-900 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">View
-					on Github</a>
+				<h1 class="font-bold text-lg text-secondary uppercase">Freibad Mirke 2022</h1>
+				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold my-4 text-primary">Wir bauen ein Freibad</h2>
+				<p class="max-w-screen-lg text-lg lg:text-xl font-light  mb-10">Wasser und der Zugang zu sauberem Wasser waren prägend für die Entwicklung der Menschen und die Urbanisierung des bergischen Landes. Wasser war und ist für das Leben in Wuppertal von elementarer Bedeutung.</p>
+				
+				
+				<a href="#"
+					class="w-auto flex-none  text-lg leading-6 font-semibold border border-transparent rounded-xl hover:decoration-wavy transition-colors duration-200">
+					Entdecken >
+				</a>
 			</div>
-			<!-- End introduction -->
+			<!-- End introduction
 		<?php } ?>
 
 		<?php do_action( 'tailpress_content_start' ); ?>

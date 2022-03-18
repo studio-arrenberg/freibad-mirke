@@ -7,12 +7,23 @@
 
 <?php do_action( 'tailpress_content_after' ); ?>
 
-<footer id="colophon" class="site-footer bg-gray-50 py-12" role="contentinfo">
+<div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(77,186,189,0.7)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(77,186,189,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(77,186,189,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(77,186,189,1)" />
+        </svg>
+    </div>
+
+<footer id="colophon" class="site-footer bg-primary py-12 text-slate-50" role="contentinfo">
 	<?php do_action( 'tailpress_footer' ); ?>
 
-
-
-	<div class="container mx-auto text-center text-gray-500">
+	<div class="container mx-auto text-center ">
 		&copy; <?php echo date_i18n( 'Y' );?> - <?php echo get_bloginfo( 'name' );?>
 		<?php 
 		wp_nav_menu(
@@ -27,9 +38,9 @@
 		);
 	?>
 	</div>
-	<div class="inline-block"><b>Förderverein Pro Mirke e.V.</b><br>
-Am Marktweg 43
-42781 Haan-Gruiten</div>
+	<div class="inline-block text-slate-50"><b>Förderverein Pro Mirke e.V.</b><br>
+	Am Marktweg 43
+	42781 Haan-Gruiten</div>
 	
 </footer>
 
