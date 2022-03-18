@@ -107,3 +107,16 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 }
 
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
+
+
+
+
+
+/**
+ * Call setup files
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/blocks.php'; # Custom Blocks
