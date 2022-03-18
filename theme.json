@@ -8,18 +8,23 @@
     "color": {
       "palette": [
         {
-          "name": "Primary",
+          "name": "Blau",
           "slug": "primary",
           "color": "#4DBABD"
         },
         {
-          "name": "Secondary",
+          "name": "Orange",
           "slug": "secondary",
           "color": "#FB7F43"
         },
         {
           "name": "Dark",
           "slug": "dark",
+          "color": "#175254"
+        },
+        {
+          "name": "Dunkelblau",
+          "slug": "primary-dark",
           "color": "#175254"
         },
         {
