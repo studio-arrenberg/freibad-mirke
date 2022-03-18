@@ -90,11 +90,11 @@
 			
 			<div class="h-96  py-8 bg-cover bg-center bg-[url('http://localhost:3000/wordpress/wp-content/uploads/2021/11/hp_logo_fertig_a1.png')]">
 				<div class="container h-full mx-auto ">
-					<div class="bg-white   max-w-lg p-6">
+					<div class="bg-white h-full  max-w-lg p-6">
 						<h3 class="text-primary font-bold text-lg mb-6">
 							Lorem dolor amer
 						</h3>
-						<p>
+						<p class="leading-6">
 							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 						</p>
 					</div>

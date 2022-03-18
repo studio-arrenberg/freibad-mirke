@@ -92,6 +92,18 @@
   margin-bottom: 1.5rem
 }
 
+.mb-24 {
+  margin-bottom: 6rem
+}
+
+.mb-16 {
+  margin-bottom: 4rem
+}
+
+.block {
+  display: block
+}
+
 .inline-block {
   display: inline-block
 }
@@ -138,6 +150,26 @@
 
 .w-auto {
   width: auto
+}
+
+.w-36 {
+  width: 9rem
+}
+
+.w-96 {
+  width: 24rem
+}
+
+.w-80 {
+  width: 20rem
+}
+
+.w-2\/5 {
+  width: 40%
+}
+
+.w-3\/5 {
+  width: 60%
 }
 
 .max-w-sm {
@@ -280,6 +312,10 @@
   padding: 1.5rem
 }
 
+.p-8 {
+  padding: 2rem
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem
@@ -315,6 +351,10 @@
   padding-bottom: 2rem
 }
 
+.pl-8 {
+  padding-left: 2rem
+}
+
 .text-center {
   text-align: center
 }
@@ -348,6 +388,10 @@
   line-height: 1.25rem
 }
 
+.text-small {
+  font-size: 0.875rem
+}
+
 .font-light {
   font-weight: 300
 }
@@ -374,6 +418,14 @@
 
 .leading-tight {
   line-height: 1.25
+}
+
+.leading-5 {
+  line-height: 1.25rem
+}
+
+.leading-8 {
+  line-height: 2rem
 }
 
 .tracking-tight {
@@ -428,6 +480,11 @@
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity))
+}
+
+.text-light {
+  --tw-text-opacity: 1;
+  color: rgb(249 250 251 / var(--tw-text-opacity))
 }
 
 .antialiased {
@@ -575,6 +632,15 @@ body {
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem
   }
 }
 
