@@ -64,7 +64,7 @@
 						'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 						'menu_class'      => 'lg:flex lg:-mx-4',
 						'theme_location'  => 'primary',
-						'li_class'        => ' text-slate-900 hover:text-primary uppercase bold text-2xl md:text-base lg:mx-4',
+						'li_class'        => ' text-slate-900 hover:text-primary uppercase bold text-3xl md:text-base lg:mx-4',
 						'fallback_cb'     => false,
 					)
 				);
@@ -77,18 +77,34 @@
 
 		<?php if ( is_front_page() ) { ?>
 			<!-- Start introduction -->
-			<div class="container mx-auto my-12 border-b pb-12">
+			<div class="container max-w-screen-lg mx-auto my-12 py-48 ">
 				<h1 class="font-bold text-lg text-secondary uppercase">Freibad Mirke 2022</h1>
-				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold my-4 text-primary">Wir bauen ein Freibad</h2>
-				<p class="max-w-screen-lg text-lg lg:text-xl font-light  mb-10">Wasser und der Zugang zu sauberem Wasser waren prägend für die Entwicklung der Menschen und die Urbanisierung des bergischen Landes. Wasser war und ist für das Leben in Wuppertal von elementarer Bedeutung.</p>
+				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold mb-8 text-primary">Wir bauen ein Freibad</h2>
+				<p class="max-w-screen-md text-lg lg:text-xl font-light md:ml-16 mb-4">Wasser und der Zugang zu sauberem Wasser waren prägend für die Entwicklung der Menschen und die Urbanisierung des bergischen Landes. Wasser war und ist für das Leben in Wuppertal von elementarer Bedeutung.</p>
 				
-				
-				<a href="#"
-					class="w-auto flex-none  text-lg leading-6 font-semibold border border-transparent rounded-xl hover:decoration-wavy transition-colors duration-200">
+				<a href="#" class="w-auto flex-none  text-lg leading-6 font-semibold border border-transparent rounded-xl  hover:underline hover:underline-offset-3 hover:decoration-wavy transition-colors duration-200  md:ml-16">
 					Entdecken >
 				</a>
 			</div>
-			<!-- End introduction
+
+			
+			<div class="h-96  py-8 bg-cover bg-center bg-[url('http://localhost:3000/wordpress/wp-content/uploads/2021/11/hp_logo_fertig_a1.png')]">
+				<div class="container h-full mx-auto ">
+					<div class="bg-white   max-w-lg p-6">
+						<h3 class="text-primary font-bold text-lg mb-6">
+							Lorem dolor amer
+						</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			
+
+
+			<!-- End introduction -->
 		<?php } ?>
 
 		<?php do_action( 'tailpress_content_start' ); ?>
