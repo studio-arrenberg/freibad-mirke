@@ -111,31 +111,13 @@ add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class'
 
 
 
+
+
 /**
- * Add new ACF Blocks
+ * Call setup files
  *
- * @param string  $classes String of classes.
- * @param mixed   $item The curren item.
- * @param WP_Term $args Holds the nav menu arguments.
+ * @since Quartiersplattform 1.0
  *
- * @return array
+ * @return void
  */
-
-add_action('acf/init', 'my_acf_init_block_types');
-function my_acf_init_block_types() {
-
-    // Check function exists.
-    if( function_exists('acf_register_block_type') ) {
-
-        // register a testimonial block.
-        acf_register_block_type(array(
-            'name'              => 'title',
-            'title'             => __('Titel'),
-            'description'       => __('Definierter Titel '),
-            'render_template'   => 'template-parts/blocks/testimonial.php',
-            'category'          => 'formatting',
-            'icon'              => 'admin-comments',
-            'keywords'          => array( 'Titel', 'quote' ),
-        ));
-    }
-}
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/blocks.php'; # Custom Blocks

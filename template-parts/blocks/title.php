@@ -25,17 +25,18 @@ if( !empty($block['align']) ) {
 }
 
 // Load values and assign defaults.
-$text = get_field('title') ?: 'Hier steht dein Titel.';
-$image = get_field('image') ?: 295;
+$title = get_field('title') ?: 'Hier steht dein Titel.';
+$text = get_field('text') ?: 'Hier steht dein Text.';
+$subheadline = get_field('subheadline') ?: 'Hier steht deine subheadline.';
+$buttontext = get_field('buttontext') ?: 'Linktext';
+$buttonlink = get_field('buttonlink') ?: 'https://freibad-mirke.de';
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <blockquote class="testimonial-blockquote">
-        <h1><span class="testimonial-text"><?php echo $text; ?></span></h1>
+    <blockquote class="blockquote">
+        <h3><?php echo $subheadline; ?></h3>
+        <h1><span class=""><?php echo $title; ?></span></h1>
+        <p><span class=""><?php echo $text; ?></span></p>
+        <button><a class="button" href="<?php echo $buttonlink; ?>"><?php echo $buttontext; ?><span class=""></span></a></button>
     </blockquote>
-    <div class="testimonial-image">
-    <?php if( !empty( $image ) ): ?>
-    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-<?php endif; ?>
-    </div>
 </div>
