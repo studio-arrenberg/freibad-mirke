@@ -108,3 +108,34 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 }
 
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
+
+
+
+/**
+ * Add new ACF Blocks
+ *
+ * @param string  $classes String of classes.
+ * @param mixed   $item The curren item.
+ * @param WP_Term $args Holds the nav menu arguments.
+ *
+ * @return array
+ */
+
+add_action('acf/init', 'my_acf_init_block_types');
+function my_acf_init_block_types() {
+
+    // Check function exists.
+    if( function_exists('acf_register_block_type') ) {
+
+        // register a testimonial block.
+        acf_register_block_type(array(
+            'name'              => 'title',
+            'title'             => __('Titel'),
+            'description'       => __('Definierter Titel '),
+            'render_template'   => 'template-parts/blocks/testimonial.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'Titel', 'quote' ),
+        ));
+    }
+}
