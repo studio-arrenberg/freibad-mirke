@@ -25,9 +25,9 @@ if( !empty($block['align']) ) {
 }
 
 // Load values and assign defaults.
-$title = get_field('title') ?: 'Hier steht dein Titel.';
-$text = get_field('text') ?: 'Hier steht dein Text.';
-$subheadline = get_field('subheadline') ?: 'Hier steht deine subheadline.';
+$title = get_field('title') ?: 'Hier steht der Titel.';
+$text = get_field('text') ?: 'Hier steht der Text.';
+$subheadline = get_field('subheadline') ?: 'Hier steht die Subheadline.';
 $buttontext = get_field('buttontext') ?: 'Linktext';
 $buttonlink = get_field('buttonlink') ?: 'https://freibad-mirke.de';
 

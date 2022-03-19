@@ -13,35 +13,10 @@ get_header();
 
 <main class="" role="main" data-track-content>
     
-    <h2>Test<?php the_field('title', 4460); ?></h2>
-    <?php if( get_field('title', 4460) ): ?>
-        <h2>Funktioniert<?php the_field('text_field'); ?></h2>
-<?php endif; ?>
+<div class="entry-content">
 
-    <?php 
-    
-    $image = get_field('quartier_image', 'option');
-    if (empty( $image )) {
-        $image = get_template_directory_uri()."/assets/images/quartier.png";
-    }
-    else {
-        $image = $image['url'];
-    }
-    ?>
-
-    <section class="quartier-header bg-image" style="background: url('<?php echo esc_url($image); ?>')">
-        <div class="stage-center has-bg-blur">
-            <h1 class="heading-size-1"><?php the_field('welcome-title','option'); ?></h1>
-        </div>
-    </section>
-
-    <section class="">
-        <?php if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {?>
-
-        <?php } ?>
-
-       
-
+        <section class="">
+ 
         <?php if( '' !== get_post()->post_content ) { ?>
 
             <div class="gutenberg-content">
@@ -157,6 +132,8 @@ get_header();
     ?>
 
 
-</main><!-- #site-content -->
 
+</div>
+</main><!-- #site-content -->
+                
 <?php get_footer(); ?>
