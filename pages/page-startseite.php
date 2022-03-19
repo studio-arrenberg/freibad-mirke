@@ -75,7 +75,7 @@ get_header();
                     'meta_key'   => 'pin_main',
                     'meta_value' => array(true, 'true')
                 );
-                card_list($pinned_projects);
+                
             ?>
          </div>
         
@@ -124,7 +124,7 @@ get_header();
                             ),
                         );
                     ?>  
-                    <?php card_list($args4);?>
+                    
                 </div>
                 <a class="button is-primary" href="<?php echo get_site_url()."/veranstaltungen"; ?>"><?php _e("Zu den Veranstaltungen", "quartiersplattform"); ?></a>
             </div>
@@ -144,7 +144,7 @@ get_header();
                         'orderby'        => 'rand',
                     );
                         
-                    card_list($args, $type = 'badge');
+                    
 
                 ?>
                 <a class="button is-primary" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
@@ -155,10 +155,10 @@ get_header();
     
     <?php 
 	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
-		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, __('Zur Wunschliste','quartiersplattform'), home_url().'/feedback' );
+		
 
         $text = __('Allgemeine und öffentliche Informationen zu der Quartiersplattform.','quartiersplattform'); 
-        reminder_card('qp_info', __('Informationen zu deiner Quartiersplattform','quartiersplattform'), $text, __('Informationen','quartiersplattform'), home_url().'/quartiersplattform' );
+        
     ?>
 
 

@@ -1,10 +1,5 @@
 <?php /**
- * Add new ACF Blocks
- *
- * @param string  $classes String of classes.
- * @param mixed   $item The curren item.
- * @param WP_Term $args Holds the nav menu arguments.
- *
+ * Add ACF Block Titel und Text
  * @return array
  */
 
@@ -14,7 +9,6 @@ function my_acf_init_block_types() {
     // Check function exists.
     if( function_exists('acf_register_block_type') ) {
 
-        // register a testimonial block.
         acf_register_block_type(array(
             'name'              => 'title',
             'title'             => __('Titel und Text'),
@@ -23,6 +17,20 @@ function my_acf_init_block_types() {
             'category'          => 'formatting',
             'icon'              => 'editor-underline',
             'keywords'          => array( 'Titel', 'quote' ),
+        ));
+    }
+    // Check function exists.
+    if( function_exists('acf_register_block_type') ) {
+
+        // register a testimonial block.
+        acf_register_block_type(array(
+            'name'              => 'Bild',
+            'title'             => __('Bild mit Beschreibung'),
+            'description'       => __('Bild mit Beschreibungstext'),
+            'render_template'   => 'template-parts/blocks/image.php',
+            'category'          => 'formatting',
+            'icon'              => 'cover-image            ',
+            'keywords'          => array( 'Bild', 'quote' ),
         ));
     }
 }
@@ -146,5 +154,18 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     endif;
+
+
+
+/**
+* Add ACF Block Überschrift und Bild
+* @return array
+*/
+
+
+
+
+
+
 
 ?>
