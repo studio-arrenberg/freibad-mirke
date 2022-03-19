@@ -23,3 +23,5 @@ node_modules/
 *.sqlite
 package-lock.json
 .DS_Store
+.DS_Store
+.DS_Store
