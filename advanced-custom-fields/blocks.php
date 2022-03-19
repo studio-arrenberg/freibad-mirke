@@ -18,8 +18,7 @@ function my_acf_init_block_types() {
             'icon'              => 'editor-underline',
             'keywords'          => array( 'Titel', 'quote' ),
         ));
-    }
-    // Check function exists.
+    };
     if( function_exists('acf_register_block_type') ) {
 
         // register a testimonial block.
@@ -152,6 +151,72 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
     ));
+    acf_add_local_field_group(array(
+        'key' => 'group_62359b1c4cfab',
+        'title' => 'Bild und Text',
+        'fields' => array(
+            array(
+                'key' => 'field_62359b2baa2f3',
+                'label' => 'Text',
+                'name' => 'text',
+                'type' => 'textarea',
+                'instructions' => 'Hier kommt der Beschreibungstext für dein Bild hin.',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => 4,
+                'new_lines' => '',
+            ),
+            array(
+                'key' => 'field_62359b4aaa2f4',
+                'label' => 'Bild',
+                'name' => 'image',
+                'type' => 'image',
+                'instructions' => 'Hier kannst du das Bild für deinen Block hochladen.',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'block',
+                    'operator' => '==',
+                    'value' => 'acf/bild',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
     
     endif;
 
@@ -161,9 +226,6 @@ if( function_exists('acf_add_local_field_group') ):
 * Add ACF Block Überschrift und Bild
 * @return array
 */
-
-
-
 
 
 

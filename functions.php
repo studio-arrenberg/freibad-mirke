@@ -120,3 +120,4 @@ add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class'
  * @return void
  */
 require_once dirname( __FILE__ ) .'/advanced-custom-fields/blocks.php'; # Custom Blocks
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/veranstaltungen.php'; # Veranstaltungen ACF und CPT

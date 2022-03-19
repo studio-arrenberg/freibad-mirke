@@ -1,28 +1,43 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( ' block mb-12' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-12' ); ?>>
 
-	<a class="flex" href="<?php echo  esc_url( get_permalink())?>"> 
+	<header class="entry-header mb-4">
+		<?php the_title( sprintf( '<h2 class="entry-title text-2xl md:text-3xl text-primary font-extrabold leading-tight mb-1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		
+		
 
-		<?php if (has_post_thumbnail( $post->ID ) ): ?>
-			<div class="w-2/5">
-		    	<?php the_post_thumbnail('large'); ?>
-			</div>
-		<?php endif; ?>
+	</header>
 
-		<div class="w-3/5 pl-8">
-			<div class="entry-header mb-4">
-				<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished" class=" text-gray-700 text-sm font-light "><?php echo get_the_date(); ?></time>
-				<h2 class="text-primary entry-title text-xl md:text-2xl font-extrabold leading-tight mb-1">
-					<?php the_title(); ?>
-				</h2>
-			</div>
+	<?php if ( is_search() || is_archive() ) : ?>
 
-			<div class="entry-summary font-light leading-6">
-				<?php the_excerpt(); ?>
-			</div>
+		<div class="entry-summary">
+			<?php the_excerpt(); ?>
 		</div>
-	</a>
+
+	<?php else : ?>
+
+		<div class="entry-content">
+			<?php
+			/* translators: %s: Name of current post */
+			the_content(
+				sprintf(
+					__( 'Continue reading %s', 'tailpress' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				)
+			);
+
+			wp_link_pages(
+				array(
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'tailpress' ) . '</span>',
+					'after'       => '</div>',
+					'link_before' => '<span>',
+					'link_after'  => '</span>',
+					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'tailpress' ) . ' </span>%',
+					'separator'   => '<span class="screen-reader-text">, </span>',
+				)
+			);
+			?>
+		</div>
+
+	<?php endif; ?>
+
 </article>
-
-
-
-
