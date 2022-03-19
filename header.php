@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased cursor-default' ); ?>>
+<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -19,8 +19,8 @@
 	
 	<header>
 
-		<div class="mx-auto container ">
-			<div class="lg:flex lg:justify-between lg:items-center border-b py-[20px]">
+		<div class="mx-auto container">
+			<div class="lg:flex lg:justify-between lg:items-center  py-[20px]">
 				<div class="flex justify-between items-center">
 					<div>
 						<svg width="85" height="112" viewBox="0 0 85 112" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,11 +61,10 @@
 				wp_nav_menu(
 					array(
 						'container_id'    => 'primary-menu',
-						'container_class' => 'hidden bg-slate-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+						'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 						'menu_class'      => 'lg:flex lg:-mx-4',
 						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-4 teal-900 uppercase bold red-500',
-
+						'li_class'        => ' text-slate-900 hover:text-primary uppercase bold text-3xl md:text-base lg:mx-4',
 						'fallback_cb'     => false,
 					)
 				);
@@ -74,21 +73,37 @@
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow">
+	<div id="content" class="site-content flex-grow bg-slate-50 text-dark">
 
 		<?php if ( is_front_page() ) { ?>
 			<!-- Start introduction -->
-			<div class="container mx-auto my-12 border-b pb-12">
-				<h1 class="font-bold text-lg text-secondary uppercase">TailPress</h1>
-				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold my-4">Rapidly build your WordPress theme
-					with <a href="https://tailwindcss.com" class="text-primary">Tailwind CSS</a>.</h2>
-				<p class="max-w-screen-lg text-gray-700 text-lg font-medium mb-10">TailPress is your go-to starting
-					point for developing WordPress themes with TailwindCSS and comes with basic block-editor support out
-					of the box.</p>
-				<a href="https://github.com/jeffreyvr/tailpress"
-					class="w-full sm:w-auto flex-none bg-gray-900 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">View
-					on Github</a>
+			<div class="container max-w-screen-lg mx-auto my-12 py-48 ">
+				<h1 class="font-bold text-lg text-secondary uppercase">Freibad Mirke 2022</h1>
+				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold mb-8 text-primary">Wir bauen ein Freibad</h2>
+				<p class="max-w-screen-md text-lg lg:text-xl font-light md:ml-16 mb-4">Wasser und der Zugang zu sauberem Wasser waren prägend für die Entwicklung der Menschen und die Urbanisierung des bergischen Landes. Wasser war und ist für das Leben in Wuppertal von elementarer Bedeutung.</p>
+				
+				<a href="#" class="w-auto flex-none  text-lg leading-6 font-semibold border border-transparent rounded-xl  hover:underline hover:underline-offset-3 hover:decoration-wavy transition-colors duration-200  md:ml-16">
+					Entdecken >
+				</a>
 			</div>
+
+			
+			<div class="h-96  py-8 bg-cover bg-center bg-[url('http://localhost:3000/wordpress/wp-content/uploads/2021/11/hp_logo_fertig_a1.png')]">
+				<div class="container h-full mx-auto ">
+					<div class="bg-white h-full  max-w-lg p-6">
+						<h3 class="text-primary font-bold text-lg mb-6">
+							Lorem dolor amer
+						</h3>
+						<p class="leading-6">
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			
+
+
 			<!-- End introduction -->
 		<?php } ?>
 
