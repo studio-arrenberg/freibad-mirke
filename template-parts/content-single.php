@@ -9,6 +9,7 @@
 		<?php the_content(); ?>
 
 		<?php
+			the_post_thumbnail();
 			wp_link_pages(
 				array(
 					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'tailpress' ) . '</span>',

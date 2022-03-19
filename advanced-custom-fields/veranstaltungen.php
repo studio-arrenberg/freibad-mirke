@@ -16,7 +16,7 @@
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
-        'key' => 'group_62311f5b7c4cb',
+        'key' => 'group_62311f5b7c5cb',
         'title' => 'Veranstaltungen',
         'fields' => array(
             array(
@@ -32,47 +32,9 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'display_format' => 'd.m.Y H:i',
-                'return_format' => 'd.m.Y H:i',
+                'display_format' => 'j F Y H:i',
+                'return_format' => 'j F Y H:i',
                 'first_day' => 1,
-            ),
-            array(
-                'key' => 'field_6231204396d9d',
-                'label' => 'Titel',
-                'name' => 'title',
-                'type' => 'text',
-                'instructions' => 'Der Titel für die Veranstaltung.',
-                'required' => 1,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'default_value' => '',
-                'placeholder' => 'Das wird die beste Veranstaltung in Wuppertal!',
-                'prepend' => '',
-                'append' => '',
-                'maxlength' => '',
-            ),
-            array(
-                'key' => 'field_6231209c96d9e',
-                'label' => 'Beschreibung',
-                'name' => 'text',
-                'type' => 'textarea',
-                'instructions' => 'Die Beschreibung für die Veranstaltung.',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'default_value' => '',
-                'placeholder' => '',
-                'maxlength' => '',
-                'rows' => '',
-                'new_lines' => '',
             ),
         ),
         'location' => array(
@@ -135,7 +97,7 @@ function cptui_register_my_cpts_event() {
 		"rewrite" => [ "slug" => "event", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => "dashicons-calendar-alt",
-		"supports" => false,
+		"supports" => [ "title", "editor", "thumbnail" ],
 		"show_in_graphql" => false,
 	];
 
