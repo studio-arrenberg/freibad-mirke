@@ -172,3 +172,29 @@ function count_query($query, $amount = 1, $number = false) {
 	}
     
 }
+
+/**
+ * Update Post Title from an ACF field value on post save.
+ *
+ * Triggers on save, edit or update of published posts.
+ * Works in "Quick Edit", but not bulk edit.
+ */
+function sync_acf_post_title($post_id, $post, $update) {
+	$acf_title = get_field('vorname', $post_id);
+	if( !empty( $image )){
+
+		if ( $title ) {
+			$title = $acf_title;
+		} else {
+			$title = get_field('vorname')." ".get_field("nachname");
+		}
+		
+		$content = array(
+			'ID' => $post_id,
+			'post_title' => $title
+		);
+		remove_action('save_post', 'sync_acf_post_title'); // prevent a loop
+		wp_update_post($content);
+	}; 
+}
+add_action('save_post', 'sync_acf_post_title', 10, 3);
