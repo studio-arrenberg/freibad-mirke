@@ -32,11 +32,12 @@ $buttontext = get_field('buttontext') ?: 'Linktext';
 $buttonlink = get_field('buttonlink') ?: 'https://freibad-mirke.de';
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <blockquote class="blockquote">
-        <h3><?php echo $subheadline; ?></h3>
-        <h1><span class=""><?php echo $title; ?></span></h1>
-        <p><span class=""><?php echo $text; ?></span></p>
-        <button><a class="button" href="<?php echo $buttonlink; ?>"><?php echo $buttontext; ?><span class=""></span></a></button>
-    </blockquote>
+<div id="<?php echo esc_attr($id); ?>" class=" container max-w-screen-lg mx-auto my-12 py-48  <?php echo esc_attr($className); ?>">
+    <h3 class="font-bold text-lg text-secondary uppercase"><?php echo $subheadline; ?></h3>
+    <h1 class="text-3xl lg:text-7xl tracking-tight font-extrabold mb-8 text-primary"><?php echo $title; ?></h1>
+    <p class="max-w-screen-md text-lg lg:text-xl font-light md:ml-16 mb-4"><?php echo $text; ?></p>
+    
+    <a class="text-lg leading-6 font-semibold  hover:underline hover:underline-offset-3 hover:decoration-wavy transition-colors duration-200  md:ml-16" href="<?php echo $buttonlink; ?>"><?php echo $buttontext; ?> ></a>
 </div>
+
+
