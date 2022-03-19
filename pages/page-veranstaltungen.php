@@ -11,7 +11,7 @@ get_header(); ?>
 
 <main class="" role="main" data-track-content>
     
-<div class="entry-content">
+<div class="">
 
         <section class="">
  

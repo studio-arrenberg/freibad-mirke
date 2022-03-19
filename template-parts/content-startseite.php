@@ -13,7 +13,7 @@
 
 	<?php else : ?>
 
-		<div class="entry-content">
+		<div class="">
 			<?php
 			/* translators: %s: Name of current post */
 			the_content(
