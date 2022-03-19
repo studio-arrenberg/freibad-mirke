@@ -121,3 +121,50 @@ add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class'
  */
 require_once dirname( __FILE__ ) .'/advanced-custom-fields/blocks.php'; # Custom Blocks
 require_once dirname( __FILE__ ) .'/advanced-custom-fields/veranstaltungen.php'; # Veranstaltungen ACF und CPT
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/mitglieder.php'; # Veranstaltungen ACF und CPT
+
+
+
+
+function card_list($args, $element = 'card') {
+
+	$query2 = new WP_Query($args);
+	// The Loop
+	while ( $query2->have_posts() ) {
+		$query2->the_post();
+		get_template_part('elements/'.$element, get_post_type());
+	}
+	// Restore original Post Data
+	wp_reset_postdata();
+
+}
+
+
+
+/**
+ * Count Query
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @return string
+ */
+function count_query($query, $amount = 1, $number = false) {
+
+	if (!$query) {
+		return false;
+	}
+
+	$my_query = new WP_Query($query);
+
+	if ($number) {
+		return $my_query->post_count;
+	}
+
+	if ($my_query->post_count >= $amount) {
+		return true;
+	}
+	else {
+		return false;
+	}
+    
+}

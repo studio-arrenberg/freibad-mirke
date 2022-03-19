@@ -1,11 +1,10 @@
 <?php 
 /**
  * 
- *  Umfragen Setup
+ *  Veranstaltungen Setup
  * 
- *  1. Page Umfragen Form
- *  2. Umfragen Post type
- *  3. ACF
+ *  1. ACF
+ *  2. CPT
  * 
  */
 
@@ -23,7 +22,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_62311f7b96d9c',
                 'label' => 'Datum',
-                'name' => 'datum',
+                'name' => 'date',
                 'type' => 'date_time_picker',
                 'instructions' => 'Das genaue Datum und die Uhrzeit für die Veranstaltung.',
                 'required' => 1,
@@ -33,8 +32,8 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'display_format' => 'd/m/Y g:i a',
-                'return_format' => 'd/m/Y g:i a',
+                'display_format' => 'd.m.Y H:i',
+                'return_format' => 'd.m.Y H:i',
                 'first_day' => 1,
             ),
             array(
@@ -59,7 +58,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_6231209c96d9e',
                 'label' => 'Beschreibung',
-                'name' => 'beschreibung',
+                'name' => 'text',
                 'type' => 'textarea',
                 'instructions' => 'Die Beschreibung für die Veranstaltung.',
                 'required' => 0,
@@ -96,7 +95,6 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     endif;
-
 
 /**
  *  --------------------------------------------------------
