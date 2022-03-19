@@ -26,10 +26,8 @@ if( !empty($block['align']) ) {
 
 // Load values and assign defaults.
 $title = get_field('title') ?: 'Hier steht dein Titel.';
-$text = get_field('text') ?: 'Hier steht dein Text.';
-$subheadline = get_field('subheadline') ?: 'Hier steht deine subheadline.';
-$buttontext = get_field('buttontext') ?: 'Linktext';
-$buttonlink = get_field('buttonlink') ?: 'https://freibad-mirke.de';
+$image = get_field('image') ;
+
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
