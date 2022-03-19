@@ -22,7 +22,6 @@
 		?>
 
 	<?php } ?>
-</article>
 
 
 	<?php if ( is_search() || is_archive() ) : ?>
