@@ -57,16 +57,32 @@ get_header();
             
         <?php } ?>
     </section>
- 
 
-    <section class="">
+    <section>
         <div class="stage-center">
-            <h2 class="heading-size-1 stage-title"><?php _e("Entdecke spannende Projekte aus deinem Quartier", "quartiersplattform"); ?></h2>
-            <p><?php _e("Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in deiner Nachbarschaft.", "quartiersplattform"); ?></p>
+            <h2 class="heading-size-1 stage-title"><?php _e('Ziele für nachhaltige Entwicklung im Quartier', 'quartiersplattform'); ?> </h2>
+            <p><?php _e("Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.", "quartiersplattform"); ?></p>
+            <div class="card-stack">
+                <?php 
+                    $args = array(
+                        'post_type'=>'post', 
+                        'post_status'=>'publish', 
+                        'posts_per_page'=> 4,
+                        'orderby'        => 'rand',
+                    );
+                        
+                    card_list($args, $type = 'badge');
+
+                ?>
+                <a class="button is-primary" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
+            </div>
+
         </div>
+    </section>
+
 
         <div class="link-card-container">
-            <?php 
+            <!-- <?php 
                 $pinned_projects = array(
                     'post_type' => 'projekte',
                     'posts_per_page' => -1,
@@ -76,14 +92,13 @@ get_header();
                     'meta_value' => array(true, 'true')
                 );
                 card_list($pinned_projects);
-            ?>
+            ?> -->
          </div>
         
          <div class="button-container">
             <a class="button " href="<?php echo get_site_url()."/projekte"; ?>"><?php _e("Neuigkeiten & Projektupdates", "quartiersplattform"); ?></a>
             <a class="button is-primary" href="<?php echo get_site_url()."/Projektverzeichnis"; ?>"><?php _e("Alle Projekte anzeigen", "quartiersplattform"); ?></a>
         </div>
-    </section>
 
 
     <section>
@@ -131,27 +146,7 @@ get_header();
         </div>
     </section>
 
-    <section>
-        <div class="stage-center">
-            <h2 class="heading-size-1 stage-title"><?php _e('Ziele für nachhaltige Entwicklung im Quartier', 'quartiersplattform'); ?> </h2>
-            <p><?php _e("Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.", "quartiersplattform"); ?></p>
-            <div class="card-stack">
-                <?php 
-                    $args = array(
-                        'post_type'=>'sdg', 
-                        'post_status'=>'publish', 
-                        'posts_per_page'=> 4,
-                        'orderby'        => 'rand',
-                    );
-                        
-                    card_list($args, $type = 'badge');
-
-                ?>
-                <a class="button is-primary" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
-            </div>
-
-        </div>
-    </section>
+    
     
     <?php 
 	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
