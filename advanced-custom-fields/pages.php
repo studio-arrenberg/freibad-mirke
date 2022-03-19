@@ -8,7 +8,7 @@
 
 function menu_setup() {
 
-    $menuname = 'qp_menu';
+    $menuname = 'Freibad';
     // get menu id
     $menu_array = wp_get_nav_menus();
     for ($i=0; $i < count($menu_array) ; $i++) { 
@@ -28,7 +28,7 @@ function menu_setup() {
         1 => array ('title' => __('Verein','quartiersplattform'), 'page_name' => 'Verein', 'ID' => '100300', 'attr' => 'Verein'),
         2 => array ('title' => __('Veranstaltungen','quartiersplattform'), 'page_name' => 'Veranstaltungen', 'ID' => '100300', 'attr' => 'Veranstaltungen'),
         3 => array ('title' => __('Ziele','quartiersplattform'), 'page_name' => 'Ziele', 'ID' => '100300', 'attr' => 'Ziele'),
-        4 => array ('title' => __('Unterstützen','quartiersplattform'), 'page_name' => 'Unterstuetzen', 'ID' => '100300', 'attr' => 'Unterstuetzen'),
+        4 => array ('title' => __('Unterstützen','quartiersplattform'), 'page_name' => 'Unterstützen', 'ID' => '100300', 'attr' => 'Unterstützen'),
         
     );
     // create menu if not exists 
@@ -76,6 +76,48 @@ function menu_setup() {
 
 
 /**
+ * Assign templates to pages
+ *
+ * @since Quartiersplattform 1.0
+ * @param array $page_template 
+ * @param array $post_states
+ * @return string
+ */
+function custom_page_template( $page_template, $post_states ) {
+	global $post;
+
+	$post_states = [];
+	$prefix = "Freibad ";
+
+	// !!! use post_name (slug) not post_title 
+
+	if ($post->post_title == "Startseite") {
+		$post_states[] = $prefix.'Startseite';
+		$page_template= get_stylesheet_directory() . '/pages/page-startseite.php';
+	}
+	else if ($post->post_title == "Verein") {
+		$post_states[] = $prefix.'Verein';
+		$page_template= get_stylesheet_directory() . '/pages/page-verein.php';
+	}
+    else if ($post->post_title == "Veranstaltungen") {
+		$post_states[] = $prefix.'Veranstaltungen';
+		$page_template= get_stylesheet_directory() . '/pages/page-veranstaltungen.php';
+	}
+	
+	
+	if (doing_filter( 'page_template') && !empty($page_template)) {
+		return $page_template;
+	}
+	else if (doing_filter( 'display_post_states') && !empty($post_states)) {
+		return $post_states;
+	}
+}
+add_filter( 'page_template', 'custom_page_template', 10, 2 );
+add_filter( 'display_post_states', 'custom_page_template', 1, 2);
+
+
+
+/**
  *  --------------------------------------------------------
  *  4. Set Home Page
  *  --------------------------------------------------------
@@ -85,7 +127,7 @@ function menu_setup() {
 function themename_after_setup_theme() {
   
     $site_type = get_option('show_on_front');
-    $home = get_page_by_title( 'Startseite', OBJECT, 'page' );
+    $home = get_page_by_title( 'Freibad', OBJECT, 'page' );
 }
 add_action( 'after_setup_theme', 'themename_after_setup_theme' );
 

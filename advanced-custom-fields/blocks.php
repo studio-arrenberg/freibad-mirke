@@ -32,6 +32,19 @@ function my_acf_init_block_types() {
             'keywords'          => array( 'Bild', 'quote' ),
         ));
     }
+    if( function_exists('acf_register_block_type') ) {
+
+        // register a testimonial block.
+        acf_register_block_type(array(
+            'name'              => 'Mitgliederauswahl',
+            'title'             => __('Mitgliederauswahl mit Beschreibung'),
+            'description'       => __('Hier kannst du die Mitglieder auswählen, die angezeigt werden sollen.'),
+            'render_template'   => 'template-parts/blocks/member.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-user',
+            'keywords'          => array( 'Mitglieder', 'quote' ),
+        ));
+    }
 }
 
 if( function_exists('acf_add_local_field_group') ):

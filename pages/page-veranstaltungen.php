@@ -2,7 +2,7 @@
 
 /**
  *
- * Template Name: Startseite
+ * Template Name: Veranstaltungen
  * Template Post Type: page
  *
  */
@@ -11,15 +11,17 @@ get_header(); ?>
 
 <main class="" role="main" data-track-content>
     
-<div class="">
+<div class="entry-content">
 
         <section class="">
  
         <?php if ('' !== get_post()->post_content) { ?>
 
             <div class="gutenberg-content">
-                <?php          
-          if (
+                <?php
+          // Gutenberg
+          // Gutenberg
+          ?>if (
                   is_search() ||
                   (!is_singular() &&
                     'summary' === get_theme_mod('blog_content', 'full'))
