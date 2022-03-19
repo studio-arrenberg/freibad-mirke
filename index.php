@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<div class="container mx-auto my-8">
+<div id="content" class="site-content flex-grow bg-slate-50 text-dark">
+
 
 	<?php if ( have_posts() ) : ?>
 		<?php

@@ -1,5 +1,5 @@
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( ' ' ); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class( ' ' ); ?>>
 
 
 	<?php if (has_post_thumbnail( $post->ID ) ): ?>
@@ -15,9 +15,9 @@
 		<?php
 			// Gutenberg
 			if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-				the_excerpt();
+			//	the_excerpt();
 			} else {
-				the_content( __( 'Continue reading', 'twentytwenty' ) );
+				//the_content( __( 'Continue reading', 'twentytwenty' ) );
 			}
 		?>
 
@@ -32,7 +32,7 @@
 
 	<?php else : ?>
 
-		<div class="entry-content">
+		<div class="">
 			<?php
 			/* translators: %s: Name of current post */
 			the_content(
@@ -57,4 +57,4 @@
 
 	<?php endif; ?>
 
-</article>
+		</div>

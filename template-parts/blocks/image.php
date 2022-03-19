@@ -30,11 +30,18 @@ $image = get_field('image') ;
 
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <blockquote class="blockquote">
-        <h1><?php echo $text; ?></h1>
-        <?php if( !empty( $image ) ): ?>
-        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <?php endif; ?>
-    </blockquote>
+        
+
+<?php //if( !empty( $image ) ): ?>
+        <!-- <img src="<?php //echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /> -->
+<?php // endif; ?>
+	
+<div style="background-image: url('<?php echo esc_url($image['url']); ?>')" id="<?php echo esc_attr($id); ?>" class=" relative  py-8 bg-url bg-cover bg-center <?php echo esc_attr($className); ?>" >
+    <div class="container mx-auto">
+        <div class="bg-white max-w-lg p-6  min-h-[400px]">
+            <h3 class="text-primary font-bold text-lg mb-6">
+                <?php echo $text; ?>
+            </h3>
+        </div>
+    </div>
 </div>

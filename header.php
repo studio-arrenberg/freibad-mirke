@@ -88,7 +88,7 @@
 			</div>
 
 			
-			<div class="h-96  py-8 bg-cover bg-center bg-[url('http://localhost:3000/wordpress/wp-content/uploads/2021/11/hp_logo_fertig_a1.png')]">
+			<div class="h-96  py-8 bg-[url('http://localhost:3000/wordpress/wp-content/uploads/2021/11/hp_logo_fertig_a1.png')] bg-cover bg-center ">
 				<div class="container h-full mx-auto ">
 					<div class="bg-white h-full  max-w-lg p-6">
 						<h3 class="text-primary font-bold text-lg mb-6">

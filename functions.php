@@ -8,7 +8,10 @@ function tailpress_setup() {
 
 	register_nav_menus(
 		array(
-			'primary' => __( 'Primary Menu', 'tailpress' ),
+			'primary' => __( 'Hauptmenü', 'freibadmirke' ),
+			'secondary' => __( 'I. Footer', 'freibadmirke' ),
+			'third' => __( 'II. Footer', 'freibadmirke' ),
+
 		)
 	);
 
