@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<main class="container max-w-screen-lg mx-auto my-12 py-48" role="main" data-track-content>
+<main class="max-w-screen-lg mx-auto my-12 py-48" role="main" data-track-content>
     
 <div class="">
 

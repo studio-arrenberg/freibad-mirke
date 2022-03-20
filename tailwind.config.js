@@ -21,9 +21,7 @@ module.exports = {
         extend: {
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
             fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)),
-            cursor: {
-                default: 'url(../assets/images/ring.svg) 20 20, default',
-              },
+            
         },
         screens: {
             'xs': '480px',

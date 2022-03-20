@@ -5,11 +5,34 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	
+	<?php 
+	wp_enqueue_script("jquery");
+	wp_head(); ?>
 
-	<?php wp_head(); ?>
+	<script type="text/javascript">
+		// makes sure the whole site is loaded
+		jQuery(window).load(function () {
+			"use strict";
+			// will first fade out the loading animation
+			if(  jQuery( '.et-bfb' ).length <= 0 && jQuery( '.et-fb' ).length <= 0  ){ 
+				jQuery(".status").fadeOut();
+				// will fade out the whole DIV that covers the website.
+				jQuery(".preloader").delay(1000).fadeOut("slow");
+			}else{
+				jQuery(".preloader").css('display','none');
+			}
+		}); 
+	</script> 
 </head>
 
 <body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+
+<!-- Preloader -->
+<div class="preloader">
+<div class="status"></div>
+</div>
+
 
 <?php do_action( 'tailpress_site_before' ); 
 echo "<script>console.log('Template".get_page_template(). "' );</script>";
@@ -78,7 +101,7 @@ echo "<script>console.log('Template".get_page_template(). "' );</script>";
 	<div id="content" class="site-content flex-grow text-dark">
 
 		<?php if ( is_front_page() ) { ?>
-			<!-- Start introduction -->
+			<!-- Start introduction
 			<div class="container max-w-screen-lg mx-auto my-12 py-48 ">
 				<h1 class="font-bold text-lg text-secondary uppercase">Freibad Mirke 2022</h1>
 				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold mb-8 text-primary">Wir bauen ein Freibad</h2>
@@ -101,7 +124,7 @@ echo "<script>console.log('Template".get_page_template(). "' );</script>";
 						</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			
 
@@ -110,5 +133,5 @@ echo "<script>console.log('Template".get_page_template(). "' );</script>";
 		<?php } ?>
 
 		<?php do_action( 'tailpress_content_start' ); ?>
-
+		
 		<main>

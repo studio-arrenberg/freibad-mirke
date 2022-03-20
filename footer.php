@@ -82,18 +82,18 @@
 	<div class="container max-w-screen-xl  mx-auto grid grid-cols-3 mt-8  ">
 
 		<div class=" ">
-			<a  href="" class="text-slate-200 font-normal">Impressum</a>
-			<a  href="" class="text-slate-200 font-normal ml-6">Datenschutz</a>
+			<a  href="<?php echo get_site_url()."/impressum/";?>" class="text-slate-200 font-normal">Impressum</a>
+			<a  href="<?php echo get_site_url()."/datenschutz/";?>" class="text-slate-200 font-normal ml-6">Datenschutz</a>
 		</div>
 
 
-		<div class=" text-center">
-			<a  href="" class="text-slate-200 font-normal">I</a>
-			<a  href="" class="text-slate-200 font-normal ml-6">F</a>
+		<div class="">
+			<a  href="https://www.instagram.com/freibad_mirke/" class="text-slate-200 font-normal"><span class="dashicons dashicons-instagram"></span></a>
+			<a  href="https://de-de.facebook.com/mirkerfreibad/" class="text-slate-200 font-normal"><span class="dashicons dashicons-facebook"></span></a>
 		</div>
 
 		<div class=" ">
-			<a  href="" class="text-slate-200 font-normal">© Förderverein Pro Mirke eV</a>
+			<a  href="<?php echo get_site_url();?>" class="text-slate-200 font-normal">© Förderverein Pro Mirke e.V.</a>
 		</div>
 		
 	</div>

@@ -254,7 +254,7 @@ function setup_second_footer_menu() {
 		wp_update_nav_menu_item( $menu_id, 0, array(
 			'menu-item-title'   =>  __( 'Pressebereich', 'freibadmirke' ),
 			'menu-item-classes' => 'presse',
-			'menu-item-url'     => home_url( '/presse' ), 
+			'menu-item-url'     => home_url( '/presse/' ), 
 			'menu-item-status'  => 'publish'
 		) );
 		$locations = get_theme_mod('nav_menu_locations');
@@ -276,15 +276,22 @@ add_action( 'after_setup_theme', 'setup_second_footer_menu' );
 function get_custom_post_type_template( $page_template ) {
     global $post;
     $post_states = [];
-
+	$prefix = "Freibad Mirke - ";
     if ($post->post_title == "Verein") {
-        $post_states[] = "Verein";
+        $post_states[] = $prefix."Verein";
 		$page_template = get_stylesheet_directory() . "/pages/page-verein.php";
 	}else if ($post->post_title == "Veranstaltungen"){
-        $post_states[] = 'Veranstaltungen';
+        $post_states[] = $prefix.'Veranstaltungen';
 		$page_template = get_stylesheet_directory() . "/pages/page-veranstaltungen.php";
     }else if ($post->post_title == "Freibad"){
-        $post_states[] = 'Freibad';
+        $post_states[] = $prefix.'Freibad';
+		$page_template = get_stylesheet_directory() . "/pages/page-startseite.php";
+    }else if ($post->post_title == "Unterstützen"){
+        $post_states[] = $prefix.'Unterstützen';
+		// $page_template = get_stylesheet_directory() . "/pages/page-startseite.php";
+    }
+	else if ($post->post_title == "Ziele"){
+        $post_states[] = $prefix.'Ziele';
 		$page_template = get_stylesheet_directory() . "/pages/page-startseite.php";
     }
 
@@ -324,17 +331,11 @@ function create_pages() {
             'post_content' => '',
             'post_author'   => 1,
             'post_type'		=> 'page',
-            'page_template'  => 'page-startseite.php'
-
-            // 'post_slug'     => $pages[$i]['slug']
         );
 
         if ( ! function_exists( 'post_exists' ) ) {
             require_once( ABSPATH . 'wp-admin/includes/post.php' );
         }
-
-        // wp_insert_post( $my_post, true );
-        // echo post_exists($pages[$i]['title'],'','','page');
         if(post_exists($pages[$i]['title'],'','','page') === 0){
             # create post
             wp_insert_post( $my_post, true );
@@ -342,7 +343,6 @@ function create_pages() {
     }
 
 }
-
 
 
 /**
@@ -353,3 +353,14 @@ function create_pages() {
 $about = get_page_by_title( 'Freibad' );
 update_option( 'page_on_front', $about->ID );
 update_option( 'show_on_front', 'page' );
+
+/**
+ *
+ * Shorten Excerpt Length for posts
+ *
+ */
+
+function my_excerpt_length($length){
+	return 30;
+	}
+add_filter("excerpt_length", "my_excerpt_length");

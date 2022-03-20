@@ -143,11 +143,11 @@ if( function_exists('acf_add_local_field_group') ):
                 'maxlength' => '',
             ),
             array(
-                'key' => 'field_6234bf99b0ec0',
+                'key' => 'field_62372c8f71a52',
                 'label' => 'Buttonlink',
                 'name' => 'buttonlink',
-                'type' => 'url',
-                'instructions' => 'Hier kannst du den Link für den Button eintragen.',
+                'type' => 'page_link',
+                'instructions' => 'Hier kannst du den Link auswählen, der in dem Block angezeigt wird.',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -155,8 +155,13 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => '',
-                'placeholder' => '',
+                'post_type' => array(
+                    0 => 'page',
+                ),
+                'taxonomy' => '',
+                'allow_null' => 0,
+                'allow_archives' => 0,
+                'multiple' => 0,
             ),
         ),
         'location' => array(

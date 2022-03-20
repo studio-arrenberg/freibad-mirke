@@ -28,11 +28,6 @@
           "color": "#175254"
         },
         {
-          "name": "Dunkelblau",
-          "slug": "primary-dark",
-          "color": "#175254"
-        },
-        {
           "name": "Light",
           "slug": "light",
           "color": "#F9FAFB"
