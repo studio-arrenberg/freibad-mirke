@@ -39,9 +39,22 @@ function my_acf_init_block_types() {
             'name'              => 'Mitgliederauswahl',
             'title'             => __('Mitgliederauswahl mit Beschreibung'),
             'description'       => __('Hier kannst du die Mitglieder auswählen, die angezeigt werden sollen.'),
+            'render_template'   => 'template-parts/blocks/member-list.php',
+            'category'          => 'formatting',
+            'icon'              => 'businessperson',
+            'keywords'          => array( 'Mitglieder', 'quote' ),
+        ));
+    }
+    if( function_exists('acf_register_block_type') ) {
+
+        // register a testimonial block.
+        acf_register_block_type(array(
+            'name'              => 'Vereinsmitglied Kontakt',
+            'title'             => __('Vereinsmitglied mit Kontakt'),
+            'description'       => __('Hier kannst du ein Vereinsmitglied auswählen, um die Kontaktdaten einzublenden.'),
             'render_template'   => 'template-parts/blocks/member.php',
             'category'          => 'formatting',
-            'icon'              => 'admin-user',
+            'icon'              => 'admin-users',
             'keywords'          => array( 'Mitglieder', 'quote' ),
         ));
     }
@@ -164,74 +177,206 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
     ));
-    acf_add_local_field_group(array(
-        'key' => 'group_62359b1c4cfab',
-        'title' => 'Bild und Text',
-        'fields' => array(
-            array(
-                'key' => 'field_62359b2baa2f3',
-                'label' => 'Text',
-                'name' => 'text',
-                'type' => 'textarea',
-                'instructions' => 'Hier kommt der Beschreibungstext für dein Bild hin.',
-                'required' => 1,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'default_value' => '',
-                'placeholder' => '',
-                'maxlength' => '',
-                'rows' => 4,
-                'new_lines' => '',
-            ),
-            array(
-                'key' => 'field_62359b4aaa2f4',
-                'label' => 'Bild',
-                'name' => 'image',
-                'type' => 'image',
-                'instructions' => 'Hier kannst du das Bild für deinen Block hochladen.',
-                'required' => 1,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'return_format' => 'array',
-                'preview_size' => 'medium',
-                'library' => 'all',
-                'min_width' => '',
-                'min_height' => '',
-                'min_size' => '',
-                'max_width' => '',
-                'max_height' => '',
-                'max_size' => '',
-                'mime_types' => '',
-            ),
-        ),
-        'location' => array(
-            array(
+
+        acf_add_local_field_group(array(
+            'key' => 'group_62359b1c4cfab',
+            'title' => 'Bild und Text',
+            'fields' => array(
                 array(
-                    'param' => 'block',
-                    'operator' => '==',
-                    'value' => 'acf/bild',
+                    'key' => 'field_6236e759a05a0',
+                    'label' => 'Überschrift',
+                    'name' => 'headline',
+                    'type' => 'text',
+                    'instructions' => 'Hier kannst du die Überschrift für deinen Block eintragen.',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                array(
+                    'key' => 'field_62359b2baa2f3',
+                    'label' => 'Text',
+                    'name' => 'text',
+                    'type' => 'textarea',
+                    'instructions' => 'Hier kommt der Beschreibungstext für dein Bild hin.',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => 4,
+                    'new_lines' => '',
+                ),
+                array(
+                    'key' => 'field_62359b4aaa2f4',
+                    'label' => 'Bild',
+                    'name' => 'image',
+                    'type' => 'image',
+                    'instructions' => 'Hier kannst du das Bild für deinen Block hochladen.',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'array',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
                 ),
             ),
-        ),
-        'menu_order' => 0,
-        'position' => 'normal',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'hide_on_screen' => '',
-        'active' => true,
-        'description' => '',
-    ));
-    
-    endif;
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'block',
+                        'operator' => '==',
+                        'value' => 'acf/bild',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+        acf_add_local_field_group(array(
+            'key' => 'group_6236621b6119c',
+            'title' => 'Mitglied Kontaktdaten',
+            'fields' => array(
+                array(
+                    'key' => 'field_6236629730b23',
+                    'label' => 'Benutzer',
+                    'name' => 'user',
+                    'type' => 'post_object',
+                    'instructions' => 'Wähle das Vereinsmitglied aus, dessen Kontaktdaten angezeigt werden sollen.',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'post_type' => array(
+                        0 => 'members',
+                    ),
+                    'taxonomy' => '',
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'return_format' => 'object',
+                    'ui' => 1,
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'block',
+                        'operator' => '==',
+                        'value' => 'acf/vereinsmitglied-kontakt',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+        
+        acf_add_local_field_group(array(
+            'key' => 'group_62364b3d145be',
+            'title' => 'Mitgliederauswahl',
+            'fields' => array(
+                array(
+                    'key' => 'field_62364d9a73693',
+                    'label' => 'Mitgliederauswahl',
+                    'name' => 'mitgliederauswahl',
+                    'type' => 'repeater',
+                    'instructions' => 'Hier kannst du die Vereinsmitglieder angeben, die angezeigt werden sollen.',
+                    'required' => 1,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'collapsed' => 'field_62364e35256f9',
+                    'min' => 0,
+                    'max' => 8,
+                    'layout' => 'block',
+                    'button_label' => 'Mitglied hinzufügen',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_62364e35256f9',
+                            'label' => 'Benutzerauswahl',
+                            'name' => 'benutzerauswahl',
+                            'type' => 'post_object',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'post_type' => array(
+                                0 => 'members',
+                            ),
+                            'taxonomy' => '',
+                            'allow_null' => 0,
+                            'multiple' => 0,
+                            'return_format' => 'object',
+                            'ui' => 1,
+                        ),
+                    ),
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'block',
+                        'operator' => '==',
+                        'value' => 'acf/mitgliederauswahl',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ));
+        
+        endif;
 
 
 

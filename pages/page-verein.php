@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<main class="" role="main" data-track-content>
+<main class="container max-w-screen-lg mx-auto my-12 py-48" role="main" data-track-content>
     
 <div class="">
 
@@ -31,47 +31,16 @@ get_header(); ?>
             </div>
             
         <?php } ?>
-        <h1>Kommende Veranstaltungen im Freibad Mirke</h1>
-        <div class="veranstaltungen">
+        
 
 <?php
-/**
- * Alle aktuellen Veranstaltungen im Freibad Mirke
- */
 
-$args = [
-  'post_type' => 'members',
-  'post_status' => 'publish',
-  'posts_per_page' => 4,
-  'orderby' => 'date',
-  'order' => 'DESC',
-];
-
-$loop = new WP_Query($args);
-
-while ($loop->have_posts()):
-  $loop->the_post(); ?>
-     <div class="members">
-        <?php
-        $image = get_field('image');
-        if( !empty( $image ) ): ?>
-            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <?php endif; ?>
-        <h1><?php echo get_field("vorname")." ".get_field("nachname"); ?></h1>
-        <p><?php echo get_field("mail"); ?></p>
-        <p><?php echo get_field("phone"); ?></p>
-        <p><?php echo get_field("lieblingsort"); ?></p>
-        <hr>
-     
-     <?php
-endwhile;
-wp_reset_postdata();
 /**
  * Alle aktuellen Nachrichten im Freibad Mirke
  */
 
 ?>
-</div>
+
     </section>
 
 </div>

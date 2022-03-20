@@ -181,7 +181,7 @@ function count_query($query, $amount = 1, $number = false) {
  */
 function sync_acf_post_title($post_id, $post, $update) {
 	$acf_title = get_field('vorname', $post_id);
-	if( !empty( $image )){
+	if( !empty( $acf_title )){
 
 		if ( $title ) {
 			$title = $acf_title;

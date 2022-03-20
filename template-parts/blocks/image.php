@@ -25,7 +25,8 @@ if( !empty($block['align']) ) {
 }
 
 // Load values and assign defaults.
-$text = get_field('text') ?: 'Hier steht der Titel.';
+$text = get_field('text') ?: 'Hier steht die Beschreibung.';
+$headline = get_field('headline') ?: 'Hier steht der Titel.';
 $image = get_field('image') ;
 
 
@@ -40,8 +41,9 @@ $image = get_field('image') ;
     <div class="container mx-auto">
         <div class="bg-white max-w-lg p-6  min-h-[400px]">
             <h3 class="text-primary font-bold text-lg mb-6">
-                <?php echo $text; ?>
+                <?php echo $headline; ?>
             </h3>
+            <p><?php echo $text; ?></p>
         </div>
     </div>
 </div>
