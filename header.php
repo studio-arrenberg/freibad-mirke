@@ -100,38 +100,5 @@ echo "<script>console.log('Template".get_page_template(). "' );</script>";
 
 	<div id="content" class="site-content flex-grow text-dark">
 
-		<?php if ( is_front_page() ) { ?>
-			<!-- Start introduction
-			<div class="container max-w-screen-lg mx-auto my-12 py-48 ">
-				<h1 class="font-bold text-lg text-secondary uppercase">Freibad Mirke 2022</h1>
-				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold mb-8 text-primary">Wir bauen ein Freibad</h2>
-				<p class="max-w-screen-md text-lg lg:text-xl font-light md:ml-16 mb-4">Wasser und der Zugang zu sauberem Wasser waren prägend für die Entwicklung der Menschen und die Urbanisierung des bergischen Landes. Wasser war und ist für das Leben in Wuppertal von elementarer Bedeutung.</p>
-				
-				<a href="#" class=" text-lg leading-6 font-semibold  hover:underline hover:underline-offset-3 hover:decoration-wavy transition-colors duration-200  md:ml-16">
-					Entdecken >
-				</a>
-			</div>
-
-			
-			<div class="h-96  py-8 bg-[url('http://localhost:3000/wordpress/wp-content/uploads/2021/11/hp_logo_fertig_a1.png')] bg-cover bg-center ">
-				<div class="container h-full mx-auto ">
-					<div class="bg-white h-full  max-w-lg p-6">
-						<h3 class="text-primary font-bold text-lg mb-6">
-							Lorem dolor amer
-						</h3>
-						<p class="leading-6">
-							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-						</p>
-					</div>
-				</div>
-			</div> -->
-
-			
-
-
-			<!-- End introduction -->
-		<?php } ?>
-
 		<?php do_action( 'tailpress_content_start' ); ?>
 		
-		<main>

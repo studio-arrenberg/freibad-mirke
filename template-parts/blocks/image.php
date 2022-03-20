@@ -39,7 +39,7 @@ $image = get_field('image') ;
 	
 <div style="background-image: url('<?php echo esc_url($image['url']); ?>')" id="<?php echo esc_attr($id); ?>" class=" relative  py-8 bg-url bg-cover bg-center <?php echo esc_attr($className); ?>" >
     <div class="container mx-auto">
-        <div class="bg-white max-w-lg p-6  min-h-[400px]">
+        <div class="bg-white max-w-lg p-6  min-h-[500px]">
             <h3 class="text-primary font-bold text-lg mb-6">
                 <?php echo $headline; ?>
             </h3>

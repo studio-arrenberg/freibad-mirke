@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<main class="container max-w-screen-lg mx-auto my-12 py-48" role="main" data-track-content>
-
+<!-- <main  role="main" data-track-content> -->
+<!-- class="container max-w-screen-lg mx-auto my-12 py-48" -->
 
 	<?php if ( have_posts() ) : ?>
 		<?php
@@ -15,7 +15,7 @@
 
 	<?php endif; ?>
 
-		</main>
+		<!-- </main> -->
 
 <?php
 get_footer();

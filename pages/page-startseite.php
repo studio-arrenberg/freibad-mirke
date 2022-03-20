@@ -9,10 +9,12 @@
 get_header(); 
 ?>
 
-<main class="max-w-screen-lg mx-auto my-12 py-48" role="main" data-track-content>
+
+
+
         <?php if ('' !== get_post()->post_content) { ?>
 
-            <div class="gutenberg-content">
+            <div class="">
                 <?php          
           if (
                   is_search() ||
@@ -27,8 +29,8 @@ get_header();
             
        <?php } ?>
        
-            <h1 class="text-3xl mt-60 text-secondary font-bold">Kommende Veranstaltungen im Freibad Mirke</h1>
-            <div class="veranstaltungen">
+            <div id="veranstaltungen" class=" mt-24 mx-auto container max-w-screen-lg ">
+              <h2 class="text-3xl mt-60 text-secondary font-bold mb-16">Kommende Veranstaltungen im Freibad Mirke</h2>
                 <?php
                 /**
                  * Alle aktuellen Veranstaltungen im Freibad Mirke
@@ -46,21 +48,30 @@ get_header();
 
                 while ($loop->have_posts()):
                 $loop->the_post(); ?>
-                    <div class="events">
-                        <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl  lg:rounded-lg mt-28">
-                            <div class="lg:w-1/2">
-                                <div class="h-64 bg-cover lg:h-80" style="background-image:url('<?php the_post_thumbnail_url(); ?>')"></div>
-                            </div>
-                            <div class="px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                                <h2 class="text-3xl text-secondary font-bold"><?php the_title(); ?></h2>
-                                <p class="text-small"><?php echo get_the_author(); ?> am <?php echo get_the_date(); ?></p>
-                                <p class="mt-4 text-seconday"><?php the_excerpt(); ?></p>
-                                <div class="mt-8">
-                                    <a class="border border-secondary text-secondary px-5 py-3 font-semibold " href="<?php echo get_permalink(); ?>">Weiterlesen</a>        
+                    <div id="post-<?php the_ID(); ?>" <?php post_class( ' block mb-12' ); ?>>
+                          <a class="flex transition-opacity opacity-80 hover:opacity-100 hover:bg-white" href="<?php echo  esc_url( get_permalink())?>"> 
+                            <?php if (has_post_thumbnail( $post->ID ) ): ?>
+                              <div class="w-2/5">
+                                  <?php the_post_thumbnail('large'); ?>
+                              </div>
+                            <?php endif; ?>
+
+                            <div class="w-3/5 pl-8 pt-6">
+                              <p class="text-secondary text-lg font-light leading-4">Veranstaltung am <?php the_date(); ?></p>
+
+                                <h2 class="text-primary entry-title text-xl md:text-2xl font-extrabold leading-tight  mb-4">
+                                  <?php the_title(); ?>
+                                </h2>
+
+                                <div class="font-light text-base leading-6 mb-8 ">
+                                  <?php the_excerpt(); ?>
                                 </div>
+                                <button class="block hover:text-primary font-light  text-base" href="<?php // echo get_permalink(); ?>"> Zur Veranstaltung ></button>        
+
+
                             </div>
-                        </div>
-                    </div>    
+                          </a>
+                      </div>
                 <?php
                     endwhile;
                     wp_reset_postdata();
@@ -70,8 +81,8 @@ get_header();
         
 
             <!-- Alle aktuellen Nachrichten im Freibad Mirke -->
-            <div class="nachrichten mt-24">
-                <h1 class="text-3xl text-primary font-bold">Aktuelles aus dem Freibad</h1>
+            <div class="nachrichten mt-24 mx-auto container max-w-screen-lg ">
+                <h2 class="text-3xl text-primary font-bold mb-16">Aktuelles aus dem Freibad</h2>
                     <?php
                         $args = [
                         'post_type' => 'post',
@@ -86,28 +97,43 @@ get_header();
                         while ($loop->have_posts()):
                         $loop->the_post(); 
                     ?>
-                    <div class="nachrichten">
-                        <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl  lg:rounded-lg mt-28 mb-60">
-                            <div class="lg:w-1/2">
-                                <div class="h-64 bg-cover lg:h-80" style="background-image:url('<?php the_post_thumbnail_url(); ?>')"></div>
+                      <div id="post-<?php the_ID(); ?>" <?php post_class( ' block mb-12' ); ?>>
+                          <a class="flex" href="<?php echo  esc_url( get_permalink())?>"> 
+                            <?php if (has_post_thumbnail( $post->ID ) ): ?>
+                              <div class="w-2/5">
+                                  <?php the_post_thumbnail('large'); ?>
+                              </div>
+                            <?php endif; ?>
+
+                            <div class="w-3/5 pl-8">
+                              <div class="mb-4">
+                                <p class=" text-gray-700 text-sm font-light "><?php echo get_the_author(); ?> am <?php the_date(); ?></p>
+                                <h2 class="text-primary entry-title text-xl md:text-2xl font-extrabold leading-tight mb-1">
+                                  <?php the_title(); ?>
+                                </h2>
+                              </div>
+
+                              <div class="font-light leading-6">
+                                <?php the_excerpt(); ?>
+                              </div>
+                              <button class="mt:32 block hover:text-primary font-light" href="<?php // echo get_permalink(); ?>"> Weiterlesen ></button>        
+
+                              <!-- <a class="border border-primary text-primary px-5 py-3 font-semibold " href="<?php echo get_permalink(); ?>">Weiterlesen</a>         -->
+
                             </div>
-                            <div class="px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                                <h2 class="text-3xl text-primary font-bold"><?php the_title(); ?></h2>
-                                <p class="text-small"><?php echo get_the_author(); ?> am <?php echo get_the_date(); ?></p>
-                                <p class="mt-4 text-seconday"><?php the_excerpt(); ?></p>
-                                <div class="mt-8">
-                                    <a class="border border-primary text-primary px-5 py-3 font-semibold " href="<?php echo get_permalink(); ?>">Weiterlesen</a>        
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                <?php
-                    endwhile;
-                    wp_reset_postdata();
-                ?>
+                          </a>
+                      </div>
+
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    ?>
+                    
             </div>
         </div>
-</main><!-- #site-content -->
+     </div>
+  </section>
+</div>
                 
 <?php get_footer(); ?>
 

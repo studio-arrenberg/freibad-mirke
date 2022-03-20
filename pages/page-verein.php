@@ -9,15 +9,14 @@
 
 get_header(); ?>
 
-<main class="max-w-screen-lg mx-auto my-12 py-48" role="main" data-track-content>
+<!-- <main class="max-w-screen-lg mx-auto my-12 py-48" role="main" data-track-content> -->
     
 <div class="">
 
-        <section class="">
  
         <?php if ('' !== get_post()->post_content) { ?>
 
-            <div class="gutenberg-content">
+            <div >
                 <?php
                 if (
                   is_search() ||
@@ -41,7 +40,6 @@ get_header(); ?>
 
 ?>
 
-    </section>
 
 </div>
 </main><!-- #site-content -->

@@ -16,8 +16,7 @@ $text = get_field('text') ?: 'Hier steht der Titel.';
 ?>
 
 <?php if( have_rows('mitgliederauswahl') ): ?>
- <div class="member">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div id="member" class=" container  max-w-screen-lg mx-auto my-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <?php while( have_rows('mitgliederauswahl') ): the_row(); 
             $featured_post = get_sub_field('benutzerauswahl') ;
             $vorname = get_field( 'vorname', $featured_post->ID ) ?: "Vorname";
@@ -27,16 +26,16 @@ $text = get_field('text') ?: 'Hier steht der Titel.';
             $image = get_field( 'image', $featured_post->ID );
             $lieblingsort = get_field( 'lieblingsort', $featured_post->ID );
         ?>
-        <div class="w-full h-60 bg-white overflow-hidden flex flex-col md:flex-row">
-            <div class="w-full md:w-2/5 h-40">
+        <div class="w-full h-auto flex flex-col ">
+            <div class="w-full ">
                 <?php if( !empty( $image ) ): ?>
-                    <img class="object-center object-cover w-full h-full" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <img class="" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php endif; ?>        
             </div>
-            <div class="w-full md:w-3/5 text-left p-6 md:p-4 space-y-2">
-                <p class="text-xl text-primary font-bold"><?php echo $vorname." ".$nachname; ?></p>
-                <h2 class="text-primary">Lieblingsort</h2>
-                <p class="text-base leading-relaxed text-primary-dark font-normal"><?php echo $lieblingsort; ?></p>
+            <div class="w-full  py-4 space-y-2">
+                <p class="text-lg text-primary font-bold"><?php echo $vorname." ".$nachname; ?></p>
+                <!-- <h2 class="text-primary">Lieblingsort</h2> -->
+                <p class="text-base leading-relaxed text-primary-dark font-normal">"<?php echo $lieblingsort; ?>"</p>
                 <p class="text-base text-primary-dark font-normal">
                     <a href="mailto:<?php echo $mail; ?>" class="text-primary-dark hover:text-gray-600">    
                         <span class="dashicons dashicons-email"> </span> 
@@ -52,7 +51,6 @@ $text = get_field('text') ?: 'Hier steht der Titel.';
             </div>
         </div>
         <?php endwhile; ?>
-    </div>
  </div>
  
 

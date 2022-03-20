@@ -62,3 +62,52 @@
 	</a>
 </article>
 
+
+
+<h2>Aktuelles aus dem Freibad</23>
+      <?php
+      $args = [
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'posts_per_page' => 4,
+        'orderby' => 'date',
+        'order' => 'DESC',
+      ];
+
+      $loop = new WP_Query($args);
+
+      while ($loop->have_posts()):
+        $loop->the_post(); ?>
+ 
+          
+      <article id="post-<?php the_ID(); ?>" <?php post_class( ' block mb-12' ); ?>>
+        <a class="flex" href="<?php echo  esc_url( get_permalink())?>"> 
+          <?php if (has_post_thumbnail( $post->ID ) ): ?>
+            <div class="w-2/5">
+                <?php the_post_thumbnail('large'); ?>
+            </div>
+          <?php endif; ?>
+
+          <div class="w-3/5 pl-8">
+            <div class="mb-4">
+              <p class=" text-gray-700 text-sm font-light "><?php echo get_the_author(); ?> am <?php the_date(); ?></p>
+              <h2 class="text-primary entry-title text-xl md:text-2xl font-extrabold leading-tight mb-1">
+                <?php the_title(); ?>
+              </h2>
+            </div>
+
+            <div class="font-light leading-6">
+              <?php the_excerpt(); ?>
+            </div>
+
+            <!-- <a href="<?php //echo get_permalink(); ?>"><button>Weiterlesen</button></a> -->
+          </div>
+        </a>
+      </article>
+
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      ?>
+
+    </div>
