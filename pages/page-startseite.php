@@ -3,11 +3,11 @@
 /**
  *
  * Template Name: Startseite
- * Template Post Type: page
  *
  */
 
-get_header(); ?>
+get_header(); 
+?>
 
 <main class="container max-w-screen-lg mx-auto my-12 py-48" role="main" data-track-content>
     

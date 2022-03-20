@@ -11,7 +11,9 @@
 
 <body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
 
-<?php do_action( 'tailpress_site_before' ); ?>
+<?php do_action( 'tailpress_site_before' ); 
+echo "<script>console.log('Template".get_page_template(). "' );</script>";
+?>
 
 <div id="page" class="min-h-screen flex flex-col">
 

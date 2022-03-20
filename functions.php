@@ -156,7 +156,12 @@ add_action('save_post', 'sync_acf_post_title', 10, 3);
 
 
 
-// Add Menu Items
+/**
+ *
+ * Add Menu Items and genereate if not already done
+ *
+ */
+
 function setup_main_menu() {
 	// Check if the menu exists
 	$menu_name   = 'Hauptmenü';
@@ -261,3 +266,90 @@ function setup_second_footer_menu() {
 add_action( 'after_setup_theme', 'setup_main_menu' );
 add_action( 'after_setup_theme', 'setup_first_footer_menu' );
 add_action( 'after_setup_theme', 'setup_second_footer_menu' );
+
+/**
+ *
+ * Assign Templates to pages
+ *
+ */
+
+function get_custom_post_type_template( $page_template ) {
+    global $post;
+    $post_states = [];
+
+    if ($post->post_title == "Verein") {
+        $post_states[] = "Verein";
+		$page_template = get_stylesheet_directory() . "/pages/page-verein.php";
+	}else if ($post->post_title == "Veranstaltungen"){
+        $post_states[] = 'Veranstaltungen';
+		$page_template = get_stylesheet_directory() . "/pages/page-veranstaltungen.php";
+    }else if ($post->post_title == "Freibad"){
+        $post_states[] = 'Freibad';
+		$page_template = get_stylesheet_directory() . "/pages/page-startseite.php";
+    }
+
+    if (doing_filter( 'page_template') && !empty($page_template)) {
+		return $page_template;
+	}
+	else if (doing_filter( 'display_post_states') && !empty($post_states)) {
+		return $post_states;
+	}
+}
+add_filter( 'page_template', 'get_custom_post_type_template', 10, 1 );
+add_filter( 'display_post_states', 'get_custom_post_type_template', 1, 1);
+
+/**
+ *
+ * Create Pages After Setup
+ *
+ */
+
+add_action( 'after_setup_theme', 'create_pages' );
+function create_pages() {
+
+    $pages = array(
+        0 => array('title' => __('Freibad',"freibadmirke"), 'slug' => 'startseite'),
+        1 => array('title' => __('Veranstaltungen', "freibadmirke"), 'slug' => 'veranstaltungen'),
+        2 => array('title' => __('Verein',"freibadmirke"), 'slug' => 'verein'),
+        3 => array('title' => __('Unterstützen',"freibadmirke"), 'slug' => 'unterstuetzen'),
+        4 => array('title' => __('Ziele',"freibadmirke"), 'slug' => 'ziele'),
+    );
+
+    for ($i = 0; $i < count($pages); $i++) {
+
+        $my_post = [];
+        $my_post = array(
+            'post_title'    => wp_strip_all_tags($pages[$i]['title']),
+            'post_status'   => 'publish',
+            'post_content' => '',
+            'post_author'   => 1,
+            'post_type'		=> 'page',
+            'page_template'  => 'page-startseite.php'
+
+            // 'post_slug'     => $pages[$i]['slug']
+        );
+
+        if ( ! function_exists( 'post_exists' ) ) {
+            require_once( ABSPATH . 'wp-admin/includes/post.php' );
+        }
+
+        // wp_insert_post( $my_post, true );
+        // echo post_exists($pages[$i]['title'],'','','page');
+        if(post_exists($pages[$i]['title'],'','','page') === 0){
+            # create post
+            wp_insert_post( $my_post, true );
+        }
+    }
+
+}
+
+
+
+/**
+ *
+ * Set Home Page Settings
+ *
+ */
+$about = get_page_by_title( 'Freibad' );
+update_option( 'page_on_front', $about->ID );
+update_option( 'show_on_front', 'page' );
