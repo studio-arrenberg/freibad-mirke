@@ -87,7 +87,7 @@ get_header();
                         $loop->the_post(); 
                     ?>
                     <div class="nachrichten">
-                        <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl  lg:rounded-lg mt-28">
+                        <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl  lg:rounded-lg mt-28 mb-60">
                             <div class="lg:w-1/2">
                                 <div class="h-64 bg-cover lg:h-80" style="background-image:url('<?php the_post_thumbnail_url(); ?>')"></div>
                             </div>
