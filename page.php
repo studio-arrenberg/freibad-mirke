@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<div id="content" class="site-content flex-grow text-dark">
+<main class="container max-w-screen-lg mx-auto my-12 py-48" role="main" data-track-content>
+
 
 
 	<?php if ( have_posts() ) : ?>
@@ -15,7 +16,7 @@
 
 	<?php endif; ?>
 
-</div>
+		</main>
 
 <?php
 get_footer();
