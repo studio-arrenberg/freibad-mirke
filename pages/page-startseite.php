@@ -27,7 +27,7 @@ get_header();
             
        <?php } ?>
        
-            <h1 class="text-3xl mt-60 text-secondary font-bold">Kommende Veranstaltungen im Freibad Mirke</h1>
+            
             <div class="veranstaltungen">
                 <?php
                 /**
@@ -43,6 +43,10 @@ get_header();
                 ];
 
                 $loop = new WP_Query($args);
+                if($loop->have_posts()){?>
+                    <h1 class="text-3xl mt-60 text-secondary font-bold">Kommende Veranstaltungen im Freibad Mirke</h1>
+                <?php
+                }
 
                 while ($loop->have_posts()):
                 $loop->the_post(); ?>
@@ -82,7 +86,7 @@ get_header();
                         ];
 
                         $loop = new WP_Query($args);
-
+                        
                         while ($loop->have_posts()):
                         $loop->the_post(); 
                     ?>
