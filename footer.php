@@ -52,16 +52,16 @@
 			<?php 
 
 			$locations = get_nav_menu_locations();
-			$menu = wp_get_nav_menu_object( $locations['secondary'] );
+			$menu = wp_get_nav_menu_object( $locations['third'] );
 			echo '<div class="font-bold mb-3">' . wp_kses_post( $menu->name ) . '</div>';
 
 
 			wp_nav_menu(
 				array(
-					'container_id'    => 'secondary-menu',
+					'container_id'    => 'third-menu',
 					'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:block',
 					'menu_class'      => '',
-					'theme_location'  => 'secondary',
+					'theme_location'  => 'third',
 					'li_class'        => ' text-slate-50',
 					'fallback_cb'     => false,
 				)

@@ -128,51 +128,6 @@ require_once dirname( __FILE__ ) .'/advanced-custom-fields/mitglieder.php'; # Ve
 require_once dirname( __FILE__ ) .'/advanced-custom-fields/pages.php'; # Seiten erstellen
 
 
-
-
-function card_list($args, $element = 'card') {
-
-	$query2 = new WP_Query($args);
-	// The Loop
-	while ( $query2->have_posts() ) {
-		$query2->the_post();
-		get_template_part('elements/'.$element, get_post_type());
-	}
-	// Restore original Post Data
-	wp_reset_postdata();
-
-}
-
-
-
-/**
- * Count Query
- *
- * @since Quartiersplattform 1.7
- * 
- * @return string
- */
-function count_query($query, $amount = 1, $number = false) {
-
-	if (!$query) {
-		return false;
-	}
-
-	$my_query = new WP_Query($query);
-
-	if ($number) {
-		return $my_query->post_count;
-	}
-
-	if ($my_query->post_count >= $amount) {
-		return true;
-	}
-	else {
-		return false;
-	}
-    
-}
-
 /**
  * Update Post Title from an ACF field value on post save.
  *
@@ -198,3 +153,111 @@ function sync_acf_post_title($post_id, $post, $update) {
 	}; 
 }
 add_action('save_post', 'sync_acf_post_title', 10, 3);
+
+
+
+// Add Menu Items
+function setup_main_menu() {
+	// Check if the menu exists
+	$menu_name   = 'Hauptmenü';
+	$menu_exists = wp_get_nav_menu_object( $menu_name );
+	
+	// If it doesn't exist, let's create it.
+	if ( ! $menu_exists ) {
+		$menu_id = wp_create_nav_menu($menu_name);
+	
+		// Set up default menu items
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'   =>  __( 'Freibad', 'freibadmirke' ),
+			'menu-item-classes' => 'freibad',
+			'menu-item-url'     => home_url( '/' ), 
+			'menu-item-status'  => 'publish'
+		) );
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'  =>  __( 'Verein', 'freibadmirke' ),
+			'menu-item-url'    => home_url( '/verein/' ), 
+			'menu-item-status' => 'publish'
+		) );
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'  =>  __( 'Veranstaltungen', 'freibadmirke' ),
+			'menu-item-url'    => home_url( '/veranstaltungen/' ), 
+			'menu-item-status' => 'publish'
+		) );
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'  =>  __( 'Ziele', 'freibadmirke' ),
+			'menu-item-url'    => home_url( '/ziele/' ), 
+			'menu-item-status' => 'publish'
+		) );
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'  =>  __( 'Unterstützen', 'freibadmirke' ),
+			'menu-item-url'    => home_url( '/unterstuetzen/' ), 
+			'menu-item-status' => 'publish'
+		) );
+		$locations = get_theme_mod('nav_menu_locations');
+    	$locations['primary'] = $menu_id;
+    	set_theme_mod( 'nav_menu_locations', $locations );
+	}
+}
+
+function setup_first_footer_menu() {
+	// Check if the menu exists
+	$menu_name   = 'Wir bauen ein Freibad';
+	$menu_exists = wp_get_nav_menu_object( $menu_name );
+	
+	// If it doesn't exist, let's create it.
+	if ( ! $menu_exists ) {
+		$menu_id = wp_create_nav_menu($menu_name);
+	
+		// Set up default menu items
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'   =>  __( 'Freibad', 'freibadmirke' ),
+			'menu-item-classes' => 'freibad',
+			'menu-item-url'     => home_url( '/' ), 
+			'menu-item-status'  => 'publish'
+		) );
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'  =>  __( 'Verein', 'freibadmirke' ),
+			'menu-item-url'    => home_url( '/verein/' ), 
+			'menu-item-status' => 'publish'
+		) );
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'  =>  __( 'Veranstaltungen', 'freibadmirke' ),
+			'menu-item-url'    => home_url( '/veranstaltungen/' ), 
+			'menu-item-status' => 'publish'
+		) );
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'  =>  __( 'Unterstützen', 'freibadmirke' ),
+			'menu-item-url'    => home_url( '/unterstuetzen/' ), 
+			'menu-item-status' => 'publish'
+		) );
+		$locations = get_theme_mod('nav_menu_locations');
+    	$locations['secondary'] = $menu_id;
+    	set_theme_mod( 'nav_menu_locations', $locations );
+	}
+}
+
+function setup_second_footer_menu() {
+	// Check if the menu exists
+	$menu_name   = 'Für Künstler  Agenturen & die Presse';
+	$menu_exists = wp_get_nav_menu_object( $menu_name );
+	
+	// If it doesn't exist, let's create it.
+	if ( ! $menu_exists ) {
+		$menu_id = wp_create_nav_menu($menu_name);
+	
+		// Set up default menu items
+		wp_update_nav_menu_item( $menu_id, 0, array(
+			'menu-item-title'   =>  __( 'Pressebereich', 'freibadmirke' ),
+			'menu-item-classes' => 'presse',
+			'menu-item-url'     => home_url( '/presse' ), 
+			'menu-item-status'  => 'publish'
+		) );
+		$locations = get_theme_mod('nav_menu_locations');
+    	$locations['third'] = $menu_id;
+    	set_theme_mod( 'nav_menu_locations', $locations );
+	}
+}
+
+add_action( 'after_setup_theme', 'setup_main_menu' );
+add_action( 'after_setup_theme', 'setup_first_footer_menu' );
+add_action( 'after_setup_theme', 'setup_second_footer_menu' );
