@@ -275,22 +275,23 @@ add_action( 'after_setup_theme', 'setup_second_footer_menu' );
 
 function get_custom_post_type_template( $page_template ) {
     global $post;
+	$title = get_the_title();	
     $post_states = [];
 	$prefix = "Freibad Mirke - ";
-    if ($post->post_title == "Verein") {
+    if ($title == "Verein") {
         $post_states[] = $prefix."Verein";
 		$page_template = get_stylesheet_directory() . "/pages/page-verein.php";
-	}else if ($post->post_title == "Veranstaltungen"){
+	}else if ($title == "Veranstaltungen"){
         $post_states[] = $prefix.'Veranstaltungen';
 		$page_template = get_stylesheet_directory() . "/pages/page-veranstaltungen.php";
-    }else if ($post->post_title == "Freibad"){
+    }else if ($title == "Freibad"){
         $post_states[] = $prefix.'Freibad';
 		$page_template = get_stylesheet_directory() . "/pages/page-startseite.php";
-    }else if ($post->post_title == "Unterstützen"){
+    }else if ($title == "Unterstützen"){
         $post_states[] = $prefix.'Unterstützen';
 		// $page_template = get_stylesheet_directory() . "/pages/page-startseite.php";
     }
-	else if ($post->post_title == "Ziele"){
+	else if ($title == "Ziele"){
         $post_states[] = $prefix.'Ziele';
 		$page_template = get_stylesheet_directory() . "/pages/page-startseite.php";
     }

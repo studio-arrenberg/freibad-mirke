@@ -65,7 +65,7 @@ echo "<script>console.log('Template".get_page_template(). "' );</script>";
 					</svg>
 				</a>
 
-				<div class="lg:hidden mr-6">
+				<div class="lg:hidden mr-6 hover:underline-offset-4">
 					<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
 						<svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
 								xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -87,7 +87,7 @@ echo "<script>console.log('Template".get_page_template(). "' );</script>";
 					'container_class' => 'hidden mt-4  lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 					'menu_class'      => 'lg:flex lg:-mx-4',
 					'theme_location'  => 'primary',
-					'li_class'        => ' text-slate-900  uppercase bold text-3xl mb-2 lg:mb-0 md:text-base lg:mx-4 hover:text-primary hover:underline hover:underline-offset-3 hover:decoration-wavy',
+					'li_class'        => ' text-slate-900  uppercase bold text-3xl mb-2 lg:mb-0 md:text-base lg:mx-4 hover:text-primary hover:underline hover:decoration-wavy hover:underline-offset-4',
 					'fallback_cb'     => false,
 				)
 			);
@@ -95,7 +95,7 @@ echo "<script>console.log('Template".get_page_template(). "' );</script>";
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow text-dark">
+	<div id="content" class="site-content flex-grow text-dark container max-w-screen-lg mx-auto">
 
 		<?php do_action( 'tailpress_content_start' ); ?>
 		

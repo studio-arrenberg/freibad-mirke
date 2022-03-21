@@ -156,3 +156,8 @@ header .current-menu-item {
   ::selection {
     @apply text-white bg-secondary;
   }
+
+  .image-block{
+    width:100vw;
+    margin-left: calc(((100vw - 960px) / 2)* -1);
+  }

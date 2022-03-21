@@ -75,21 +75,19 @@
 			<p class="text-slate-50 font-normal">
 			E-Mail: info@promirke.de<br>
 			Telefon: 02104 8311<br>
-			Fax: 02104 831134<br>
-			Telefon: 02104 8311<br>
+			Mobil: 02104 8311<br>
 		</div>
 	</div>
 	<div class="container max-w-screen-xl  mx-auto flex justify-between md:grid  md:grid-cols-3 mt-8  text-sm ">
-
-		<div class=" ">
+		<div class="hover:text-white">
 			<a  href="<?php echo get_site_url()."/impressum/";?>" class="text-slate-200 font-normal">Impressum</a>
 			<a  href="<?php echo get_site_url()."/datenschutz/";?>" class="text-slate-200 font-normal ml-6">Datenschutz</a>
 		</div>
 
 
-		<div class=" hidden md:block">
-			<a  href="https://www.instagram.com/freibad_mirke/" class="text-slate-200 font-normal inline"><span class="dashicons dashicons-instagram"></span></a>
-			<a  href="https://de-de.facebook.com/mirkerfreibad/" class="text-slate-200 font-normal"><span class="dashicons dashicons-facebook"></span></a>
+		<div class=" hidden md:block hover:text-white">
+			<a  href="https://www.instagram.com/freibad_mirke/" class="text-slate-200 font-normal"><span class="inline text-5xl dashicons dashicons-instagram mb-4 "></span></a>
+			<a  href="https://de-de.facebook.com/mirkerfreibad/" class="text-slate-200 font-normal"><span class="inline text-5xl dashicons dashicons-facebook"></span></a>
 		</div>
 
 		<div class=" ">
