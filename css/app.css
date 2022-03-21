@@ -554,6 +554,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 2rem;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -562,11 +567,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .my-12 {
@@ -604,6 +604,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 1.5rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .-mt-\[40px\] {
   margin-top: -40px;
 }
@@ -632,20 +636,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 3rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-
-.mt-60 {
-  margin-top: 15rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
 }
 
 .mt-\[40vh\] {
@@ -732,12 +724,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 60%;
 }
 
-.w-2\/5 {
-  width: 40%;
-}
-
 .w-auto {
   width: auto;
+}
+
+.w-2\/5 {
+  width: 40%;
 }
 
 .max-w-sm {
@@ -843,6 +835,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(77 186 189 / var(--tw-border-opacity));
 }
 
+.bg-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(77 186 189 / var(--tw-bg-opacity));
@@ -861,11 +858,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-light {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .bg-cover {
@@ -951,10 +943,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 2rem;
 }
 
-.pt-6 {
-  padding-top: 1.5rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1037,14 +1025,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: -0.025em;
 }
 
-.text-gray-800 {
+.text-blue-500 {
   --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .text-slate-50 {
@@ -1087,11 +1080,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
 .text-primary-dark {
   --tw-text-opacity: 1;
   color: rgb(23 82 84 / var(--tw-text-opacity));
@@ -1112,20 +1100,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   -moz-osx-font-smoothing: grayscale;
 }
 
-.opacity-80 {
-  opacity: 0.8;
-}
-
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.transition-opacity {
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 .transition-colors {
@@ -1412,6 +1390,11 @@ header .current-menu-item {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.image-block{
+  width:100vw;
+  margin-left: calc(((100vw - 960px) / 2) * -1);
+}
+
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1420,6 +1403,11 @@ header .current-menu-item {
 .hover\:text-dark:hover {
   --tw-text-opacity: 1;
   color: rgb(23 82 84 / var(--tw-text-opacity));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary:hover {
@@ -1440,6 +1428,10 @@ header .current-menu-item {
 .hover\:decoration-wavy:hover {
   -webkit-text-decoration-style: wavy;
           text-decoration-style: wavy;
+}
+
+.hover\:underline-offset-4:hover {
+  text-underline-offset: 4px;
 }
 
 .hover\:opacity-100:hover {

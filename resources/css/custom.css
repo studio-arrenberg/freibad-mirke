@@ -159,5 +159,6 @@ header .current-menu-item {
 
   .image-block{
     width:100vw;
-    margin-left: calc(((100vw - 960px) / 2)* -1);
+    margin-left: calc(((100vw - 960px) / 2) * -1);
   }
+  
