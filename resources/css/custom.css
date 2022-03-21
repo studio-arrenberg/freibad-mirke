@@ -41,12 +41,19 @@ article > *:not(.entry-content),
     }
 }
 
-.current-menu-item {
+header .current-menu-item {
 
-    @apply text-2xl;
 
     @apply  text-primary;
   }
+
+
+footer .current-menu-item {
+
+
+  // @apply  text-dark;
+}
+
 
 
 /*Waves*/
@@ -145,3 +152,11 @@ article > *:not(.entry-content),
   }
 
  
+  ::-moz-selection { /* Code for Firefox */
+    @apply text-white bg-secondary;
+
+  }
+  
+  ::selection {
+    @apply text-white bg-secondary;
+  }

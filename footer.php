@@ -41,7 +41,7 @@
 					'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:block',
 					'menu_class'      => '',
 					'theme_location'  => 'secondary',
-					'li_class'        => ' text-slate-50',
+					'li_class'        => 'text-slate-50 hover:text-dark',
 					'fallback_cb'     => false,
 				)
 			);

@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
-	<div class="container my-8 mx-auto">
+	<!-- <div class="container my-8 mx-auto"> -->
+
+	<!-- Single Block post template  -->
 
 	<?php if ( have_posts() ) : ?>
 
@@ -22,7 +24,7 @@
 
 	<?php endif; ?>
 
-	</div>
+	<!-- </div> -->
 
 <?php
 get_footer();

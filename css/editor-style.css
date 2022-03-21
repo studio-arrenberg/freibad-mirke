@@ -44,8 +44,40 @@
   }
 }
 
+.absolute {
+  position: absolute
+}
+
 .relative {
   position: relative
+}
+
+.left-0 {
+  left: 0px
+}
+
+.right-0 {
+  right: 0px
+}
+
+.bottom-0 {
+  bottom: 0px
+}
+
+.top-0 {
+  top: 0px
+}
+
+.top-\[152px\] {
+  top: 152px
+}
+
+.z-10 {
+  z-index: 10
+}
+
+.z-0 {
+  z-index: 0
 }
 
 .m-8 {
@@ -132,6 +164,26 @@
 
 .mb-6 {
   margin-bottom: 1.5rem
+}
+
+.mt-\[60ch\] {
+  margin-top: 60ch
+}
+
+.mt-\[60vh\] {
+  margin-top: 60vh
+}
+
+.mt-\[40vh\] {
+  margin-top: 40vh
+}
+
+.-mt-\[40\] {
+  margin-top: -40
+}
+
+.-mt-\[40px\] {
+  margin-top: -40px
 }
 
 .block {
@@ -362,6 +414,16 @@
   background-color: rgb(249 250 251 / var(--tw-bg-opacity))
 }
 
+.bg-slate-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity))
+}
+
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity))
+}
+
 .bg-cover {
   background-size: cover
 }
@@ -443,6 +505,16 @@
   padding-bottom: 1rem
 }
 
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem
+}
+
 .pt-12 {
   padding-top: 3rem
 }
@@ -457,6 +529,14 @@
 
 .pt-6 {
   padding-top: 1.5rem
+}
+
+.pl-6 {
+  padding-left: 1.5rem
+}
+
+.pl-12 {
+  padding-left: 3rem
 }
 
 .text-left {
@@ -760,6 +840,16 @@ body {
   color: rgb(75 85 99 / var(--tw-text-opacity))
 }
 
+.hover\:text-secondary:hover {
+  --tw-text-opacity: 1;
+  color: rgb(251 127 67 / var(--tw-text-opacity))
+}
+
+.hover\:text-dark:hover {
+  --tw-text-opacity: 1;
+  color: rgb(23 82 84 / var(--tw-text-opacity))
+}
+
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline
@@ -775,6 +865,10 @@ body {
 }
 
 @media (min-width: 782px) {
+  .md\:-m-0 {
+    margin: -0px
+  }
+
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem
@@ -782,6 +876,14 @@ body {
 
   .md\:ml-16 {
     margin-left: 4rem
+  }
+
+  .md\:-mt-0 {
+    margin-top: -0px
+  }
+
+  .md\:mt-0 {
+    margin-top: 0px
   }
 
   .md\:flex {
@@ -917,5 +1019,10 @@ body {
 
   .lg\:text-xl {
     font-size: 1.25rem
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem
   }
 }
