@@ -45,7 +45,7 @@ get_header();
 
                 $loop = new WP_Query($args);
                 if($loop->have_posts()){?>
-            <h2 class="text-3xl mt-8 mb-6 md:mt-60  md:mb-16  font-bold  text-secondary ">Kommende Veranstaltungen im Freibad Mirke</h2>
+                  <h2 class="text-3xl mt-8 mb-6 md:mt-60  md:mb-16  font-bold  text-secondary ">Kommende Veranstaltungen im Freibad Mirke</h2>
                 <?php
                 }
 
