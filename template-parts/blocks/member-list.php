@@ -35,7 +35,7 @@ $text = get_field('text') ?: 'Hier steht der Titel.';
             <div class="w-full  py-4 space-y-2">
                 <p class="text-lg text-primary font-bold"><?php echo $vorname." ".$nachname; ?></p>
                 <!-- <h2 class="text-primary">Lieblingsort</h2> -->
-                <p class="text-base leading-relaxed text-primary-dark font-normal">"<?php echo $lieblingsort; ?>"</p>
+                <p class="text-base leading-relaxed text-primary-dark font-normal"><?php echo $lieblingsort; ?></p>
                 <p class="text-base text-primary-dark font-normal">
                     <a href="mailto:<?php echo $mail; ?>" class="text-primary-dark hover:text-gray-600">    
                         <span class="dashicons dashicons-email"> </span> 

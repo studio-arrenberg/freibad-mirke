@@ -971,6 +971,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 0.875rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .font-light {
   font-weight: 300;
 }
@@ -1462,6 +1467,11 @@ article > *:not(.entry-content), .entry-content > * {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 

@@ -30,7 +30,6 @@ get_header();
        <?php } ?>
        
             <div id="veranstaltungen" class=" mt-24 mx-auto container max-w-screen-lg ">
-              <h2 class="text-3xl mt-60 text-secondary font-bold mb-16">Kommende Veranstaltungen im Freibad Mirke</h2>
                 <?php
                 /**
                  * Alle aktuellen Veranstaltungen im Freibad Mirke
@@ -46,7 +45,7 @@ get_header();
 
                 $loop = new WP_Query($args);
                 if($loop->have_posts()){?>
-                    <h1 class="text-3xl mt-60 text-secondary font-bold">Kommende Veranstaltungen im Freibad Mirke</h1>
+                  <h2 class="text-3xl mt-60 text-secondary font-bold mb-16">Kommende Veranstaltungen im Freibad Mirke</h2>
                 <?php
                 }
 
