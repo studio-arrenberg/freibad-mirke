@@ -52,7 +52,7 @@ get_header();
                 while ($loop->have_posts()):
                 $loop->the_post(); ?>
                     <div id="post-<?php the_ID(); ?>" <?php post_class( ' block mb-12' ); ?>>
-                          <a class="flex flex-wrap transition-opacity opacity-80 hover:opacity-100 hover:bg-white" href="<?php echo  esc_url( get_permalink())?>"> 
+                          <a class="flex flex-wrap bg-white md:bg-transparent  md:transition-opacity md:opacity-80  hover:opacity-100 hover:bg-white" href="<?php echo  esc_url( get_permalink())?>"> 
                             <?php if (has_post_thumbnail( $post->ID ) ): ?>
                               <div class="w-full md:w-2/5">
                                   <?php the_post_thumbnail('large'); ?>
