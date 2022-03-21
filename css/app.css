@@ -534,8 +534,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 0px;
 }
 
-.top-\[152px\] {
-  top: 152px;
+.top-\[112px\] {
+  top: 112px;
+}
+
+.z-20 {
+  z-index: 20;
 }
 
 .z-0 {
@@ -575,6 +579,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 8rem;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -599,16 +608,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: -40px;
 }
 
+.-ml-\[20px\] {
+  margin-left: -20px;
+}
+
+.mr-6 {
+  margin-right: 1.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .mt-24 {
   margin-top: 6rem;
 }
 
-.mt-60 {
-  margin-top: 15rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mb-12 {
@@ -623,12 +640,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.25rem;
 }
 
+.mt-60 {
+  margin-top: 15rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mt-\[40vh\] {
   margin-top: 40vh;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
+.-mt-6 {
+  margin-top: -1.5rem;
+}
+
+.-mt-2 {
+  margin-top: -0.5rem;
 }
 
 .block {
@@ -637,6 +666,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .inline-block {
   display: inline-block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -663,6 +696,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: auto;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .h-80 {
   height: 20rem;
 }
@@ -675,8 +712,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-height: 100vh;
 }
 
-.min-h-\[500px\] {
-  min-height: 500px;
+.min-h-0 {
+  min-height: 0px;
 }
 
 .w-full {
@@ -691,16 +728,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.5rem;
 }
 
-.w-2\/5 {
-  width: 40%;
-}
-
 .w-3\/5 {
   width: 60%;
 }
 
+.w-2\/5 {
+  width: 40%;
+}
+
 .w-auto {
   width: auto;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-sm {
@@ -751,8 +792,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -878,6 +927,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 12rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -886,21 +940,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 .py-4 {
@@ -960,11 +999,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .font-light {
@@ -1245,18 +1279,13 @@ header .current-menu-item {
   color: rgb(77 186 189 / var(--tw-text-opacity));
 }
 
-footer .current-menu-item {
-  --tw-text-opacity: 1;
-  color: rgb(23 82 84 / var(--tw-text-opacity));
-}
-
 /*Waves*/
 
 .waves {
   position: relative;
   width: 100%;
   height: 15vh;
-  margin-bottom: -7px;
+  /* margin-bottom: -7px; */
   /*Fix for safari gap*/
   min-height: 100px;
   max-height: 400px;
@@ -1426,21 +1455,53 @@ footer .current-menu-item {
 }
 
 @media (min-width: 782px) {
+  .md\:m-0 {
+    margin: 0px;
+  }
+
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
-  .md\:mt-0 {
-    margin-top: 0px;
+  .md\:mt-60 {
+    margin-top: 15rem;
+  }
+
+  .md\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
+  .md\:-mt-14 {
+    margin-top: -3.5rem;
+  }
+
+  .md\:mt-24 {
+    margin-top: 6rem;
+  }
+
+  .md\:mb-32 {
+    margin-bottom: 8rem;
   }
 
   .md\:ml-16 {
     margin-left: 4rem;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
+  }
+
+  .md\:grid {
+    display: grid;
+  }
+
+  .md\:h-80 {
+    height: 20rem;
   }
 
   .md\:w-1\/2 {
@@ -1459,12 +1520,34 @@ footer .current-menu-item {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
 
   .md\:p-4 {
     padding: 1rem;
+  }
+
+  .md\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .md\:pl-8 {
+    padding-left: 2rem;
+  }
+
+  .md\:pt-6 {
+    padding-top: 1.5rem;
   }
 
   .md\:text-3xl {
@@ -1489,6 +1572,21 @@ footer .current-menu-item {
 }
 
 @media (min-width: 960px) {
+  .lg\:absolute {
+    position: absolute;
+  }
+
+  .lg\:inset-0 {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .lg\:top-\[152px\] {
+    top: 152px;
+  }
+
   .lg\:-mx-4 {
     margin-left: -1rem;
     margin-right: -1rem;
@@ -1499,8 +1597,21 @@ footer .current-menu-item {
     margin-right: 1rem;
   }
 
+  .lg\:my-32 {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
+
   .lg\:mt-0 {
     margin-top: 0px;
+  }
+
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .lg\:mb-40 {
+    margin-bottom: 10rem;
   }
 
   .lg\:block {
@@ -1513,6 +1624,14 @@ footer .current-menu-item {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:h-full {
+    height: 100%;
+  }
+
+  .lg\:min-h-\[500px\] {
+    min-height: 500px;
   }
 
   .lg\:grid-cols-4 {
@@ -1533,6 +1652,11 @@ footer .current-menu-item {
 
   .lg\:p-0 {
     padding: 0px;
+  }
+
+  .lg\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .lg\:text-4xl {

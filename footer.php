@@ -23,7 +23,7 @@
 <footer id="colophon" class="site-footer bg-primary pt-12 pb-6 text-slate-50 " role="contentinfo">
 	<?php do_action( 'tailpress_footer' ); ?>
 
-	<div class="container max-w-screen-xl mx-auto grid grid-cols-3">
+	<div class="container max-w-screen-xl mx-auto md:grid grid-cols-3">
 		
 		<!-- &copy; <?php // echo date_i18n( 'Y' );?> - <?php // echo get_bloginfo( 'name' );?> -->
 
@@ -79,7 +79,7 @@
 			Telefon: 02104 8311<br>
 		</div>
 	</div>
-	<div class="container max-w-screen-xl  mx-auto grid grid-cols-3 mt-8  ">
+	<div class="container max-w-screen-xl  mx-auto flex justify-between md:grid  md:grid-cols-3 mt-8  text-sm ">
 
 		<div class=" ">
 			<a  href="<?php echo get_site_url()."/impressum/";?>" class="text-slate-200 font-normal">Impressum</a>
@@ -87,13 +87,13 @@
 		</div>
 
 
-		<div class="">
-			<a  href="https://www.instagram.com/freibad_mirke/" class="text-slate-200 font-normal"><span class="dashicons dashicons-instagram"></span></a>
+		<div class=" hidden md:block">
+			<a  href="https://www.instagram.com/freibad_mirke/" class="text-slate-200 font-normal inline"><span class="dashicons dashicons-instagram"></span></a>
 			<a  href="https://de-de.facebook.com/mirkerfreibad/" class="text-slate-200 font-normal"><span class="dashicons dashicons-facebook"></span></a>
 		</div>
 
 		<div class=" ">
-			<a  href="<?php echo get_site_url();?>" class="text-slate-200 font-normal">© Förderverein Pro Mirke e.V.</a>
+			<a  href="<?php echo get_site_url();?>" class="text-slate-200 font-normal">© Pro Mirke e.V.</a>
 		</div>
 		
 	</div>
