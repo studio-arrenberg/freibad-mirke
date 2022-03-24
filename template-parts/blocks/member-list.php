@@ -18,18 +18,25 @@ $text = get_field('text') ?: 'Hier steht der Titel.';
 <?php if( have_rows('mitgliederauswahl') ): ?>
     <div id="member" class=" container  max-w-screen-lg mx-auto my-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <?php while( have_rows('mitgliederauswahl') ): the_row(); 
-            $featured_post = get_sub_field('benutzerauswahl') ;
+            
+            $featured_post = get_sub_field('benutzerauswahl');
+            if( !empty($featured_post)){
+                echo "<script>console.log('Ist nicht leer')</script>";
+            }else{
+                echo "<script>console.log('Jetzt schon')</script>";
+            };
             $vorname = get_field( 'vorname', $featured_post->ID ) ?: "Vorname";
             $nachname = get_field( 'nachname', $featured_post->ID ) ?: "Vorname";
             $phone = get_field( 'phone', $featured_post->ID ) ?: "Telefonnummer";
             $mail = get_field( 'mail', $featured_post->ID ) ?: "E-Mail";
             $image = get_field( 'image', $featured_post->ID );
             $lieblingsort = get_field( 'lieblingsort', $featured_post->ID );
+            
         ?>
         <div class="w-full h-auto flex flex-col ">
-            <div class="w-full ">
+            <div class="w-full  h-auto">
                 <?php if( !empty( $image ) ): ?>
-                    <img class="" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php endif; ?>        
             </div>
             <div class="w-full  py-4 space-y-2">
@@ -49,6 +56,7 @@ $text = get_field('text') ?: 'Hier steht der Titel.';
                     </a>
                 </p>
             </div>
+        
         </div>
         <?php endwhile; ?>
  </div>

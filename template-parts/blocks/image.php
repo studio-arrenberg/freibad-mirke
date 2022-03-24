@@ -38,8 +38,7 @@ $image = get_field('image') ;
 <?php // endif; ?>
 	
 
-<div class="h-auto relative" style="width:100vw;
-    margin-left: calc(((100vw - 960px) / 2) * -1);">
+<div class="h-auto relative" style="width:100vw; margin-left: calc(((100vw - 960px) / 2) * -1);">
     <div style="background-image: url('<?php echo esc_url($image['url']); ?>')" id="<?php echo esc_attr($id); ?>" class=" relative h-60 md:h-80 lg:h-full lg:absolute lg:inset-0 lg:mb-40 bg-url bg-cover bg-center z-0 <?php echo esc_attr($className); ?>" >
     </div>
     <div class="container mx-auto z-10 relative  -mt-6  md:-mt-14 lg:py-12">
