@@ -109,6 +109,11 @@
   margin-bottom: 8rem
 }
 
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem
+}
+
 .mb-8 {
   margin-bottom: 2rem
 }
@@ -177,6 +182,26 @@
   margin-top: -0.5rem
 }
 
+.ml-auto {
+  margin-left: auto
+}
+
+.mr-auto {
+  margin-right: auto
+}
+
+.ml-4 {
+  margin-left: 1rem
+}
+
+.ml-\[50\%-50vw\] {
+  margin-left: 50% - 50vw
+}
+
+.ml-\[calc\(50\%-50vw\)\] {
+  margin-left: calc(50% - 50vw)
+}
+
 .block {
   display: block
 }
@@ -225,6 +250,10 @@
   height: 100%
 }
 
+.h-40 {
+  height: 10rem
+}
+
 .min-h-screen {
   min-height: 100vh
 }
@@ -255,6 +284,14 @@
 
 .w-2\/5 {
   width: 40%
+}
+
+.w-screen {
+  width: 100vw
+}
+
+.w-40 {
+  width: 10rem
 }
 
 .max-w-sm {
@@ -807,6 +844,14 @@ body {
     margin-left: 4rem
   }
 
+  .md\:mt-48 {
+    margin-top: 12rem
+  }
+
+  .md\:mt-40 {
+    margin-top: 10rem
+  }
+
   .md\:block {
     display: block
   }
@@ -972,10 +1017,6 @@ body {
 
   .lg\:items-center {
     align-items: center
-  }
-
-  .lg\:justify-between {
-    justify-content: space-between
   }
 
   .lg\:bg-transparent {

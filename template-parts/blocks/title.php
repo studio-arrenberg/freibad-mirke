@@ -19,7 +19,7 @@ $buttonlink = get_field('buttonlink') ?: 'https://freibad-mirke.de';
 ?>
 
 
-<div id="title-block" class="md:mt-64 md:mb-40 lg:mb-64 mx-auto container max-w-screen-lg  ">
+<div id="title-block" class="my-20 md:mt-40 md:mb-40 lg:mb-64 mx-auto container max-w-screen-lg  ">
     <h3 class="font-bold text-base md:text-lg text-secondary uppercase leading-6"><?php echo $subheadline; ?></h3>
     <h1 class="text-5xl lg:text-7xl tracking-tight font-extrabold mb-8 text-primary"><?php echo $title; ?></h1>
     <p class="max-w-screen-md text-lg lg:text-xl font-light md:ml-16 mb-4"><?php echo $text; ?></p>
