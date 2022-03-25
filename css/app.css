@@ -554,6 +554,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 2rem;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -562,11 +567,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .my-12 {
@@ -608,6 +608,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1rem;
 }
 
+.mr-auto {
+  margin-right: auto;
+}
+
 .-mt-\[40px\] {
   margin-top: -40px;
 }
@@ -622,6 +626,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .mt-24 {
@@ -644,32 +652,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 40vh;
 }
 
+.ml-\[calc\(50\%-50vw\)\] {
+  margin-left: calc(50% - 50vw);
+}
+
 .-mt-6 {
   margin-top: -1.5rem;
 }
 
 .-mt-2 {
   margin-top: -0.5rem;
-}
-
-.ml-auto {
-  margin-left: auto;
-}
-
-.mr-auto {
-  margin-right: auto;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.ml-\[50\%-50vw\] {
-  margin-left: 50% - 50vw;
-}
-
-.ml-\[calc\(50\%-50vw\)\] {
-  margin-left: calc(50% - 50vw);
 }
 
 .block {
@@ -714,10 +706,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-80 {
   height: 20rem;
-}
-
-.h-full {
-  height: 100%;
 }
 
 .h-40 {
@@ -867,6 +855,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(77 186 189 / var(--tw-border-opacity));
 }
 
+.bg-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(77 186 189 / var(--tw-bg-opacity));
@@ -885,11 +878,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-light {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .bg-cover {
@@ -1057,14 +1045,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: -0.025em;
 }
 
-.text-gray-800 {
+.text-blue-500 {
   --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .text-slate-50 {
@@ -1105,11 +1098,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
-}
-
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .text-primary-dark {
@@ -1395,16 +1383,16 @@ header .current-menu-item {
 }
 
 .preloader .status {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   left: 50%;
   top: 50%;
-  background-image: url(../assets/images/Preloader_9.gif);
+  background-image: url(../assets/images/ring.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin: -50px 0 0 -50px;
+  margin: -25px 0 0 -25px;
 }
 
 ::-moz-selection {
@@ -1425,6 +1413,31 @@ header .current-menu-item {
 .image-block{
   width:100vw;
   margin-left: calc(((100vw - 960px) / 2) * -1);
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 4s linear infinite;
+  animation: rotating 4s linear infinite;
 }
 
 .hover\:bg-white:hover {
@@ -1492,8 +1505,8 @@ header .current-menu-item {
     margin-top: -3.5rem;
   }
 
-  .md\:mt-64 {
-    margin-top: 16rem;
+  .md\:mt-40 {
+    margin-top: 10rem;
   }
 
   .md\:mb-40 {
@@ -1502,14 +1515,6 @@ header .current-menu-item {
 
   .md\:ml-16 {
     margin-left: 4rem;
-  }
-
-  .md\:mt-48 {
-    margin-top: 12rem;
-  }
-
-  .md\:mt-40 {
-    margin-top: 10rem;
   }
 
   .md\:block {

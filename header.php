@@ -30,7 +30,7 @@
 
 <!-- Preloader -->
 <div class="preloader">
-<div class="status"></div>
+<div class="status rotating"></div>
 </div>
 
 <!-- Echo Current Page Template -->
