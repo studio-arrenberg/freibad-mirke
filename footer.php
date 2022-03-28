@@ -38,7 +38,7 @@
 			wp_nav_menu(
 				array(
 					'container_id'    => 'secondary-menu',
-					'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:block',
+					'container_class' => ' md:mt-4 md:p-4 lg:mt-0 lg:p-0 lg:block',
 					'menu_class'      => '',
 					'theme_location'  => 'secondary',
 					'li_class'        => 'text-slate-50 hover:text-dark',
@@ -53,13 +53,13 @@
 
 			$locations = get_nav_menu_locations();
 			$menu = wp_get_nav_menu_object( $locations['third'] );
-			echo '<div class="font-bold mb-3">' . wp_kses_post( $menu->name ) . '</div>';
+			echo '<div class="font-bold mb-3 mt-6 md:mt-0">' . wp_kses_post( $menu->name ) . '</div>';
 
 
 			wp_nav_menu(
 				array(
 					'container_id'    => 'third-menu',
-					'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:block',
+					'container_class' => ' md:mt-4 md:p-4 lg:mt-0 lg:p-0 lg:block',
 					'menu_class'      => '',
 					'theme_location'  => 'third',
 					'li_class'        => ' text-slate-50',
@@ -68,7 +68,7 @@
 			);
 			?>
 			<!-- Begin Mailchimp Signup Form -->
-				<div id="mc_embed_signup" class="mt-4">
+				<div id="mc_embed_signup" class="mb-6 mt-3 md:mb-0 md:mt-4">
 					<form action="https://freibad-mirke.us14.list-manage.com/subscribe/post?u=019ee74186a81164d81b45391&amp;id=6ec16cff59" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="" novalidate>
 						<div id="mc_embed_signup_scroll">
 					<div class="mc-field-group">
@@ -110,7 +110,7 @@
 		</div>
 
 
-		<div class=" hidden md:block hover:text-white">
+		<div class="  md:block hover:text-white">
 			<a  href="https://www.instagram.com/freibad_mirke/" class="text-slate-200 font-normal"><span class="inline text-5xl dashicons dashicons-instagram mb-4 "></span></a>
 			<a  href="https://de-de.facebook.com/mirkerfreibad/" class="text-slate-200 font-normal"><span class="inline text-5xl dashicons dashicons-facebook"></span></a>
 		</div>

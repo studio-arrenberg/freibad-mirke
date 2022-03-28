@@ -84,10 +84,10 @@ echo "<script>console.log('Template".get_page_template(). "' );</script>";
 			wp_nav_menu(
 				array(
 					'container_id'    => 'primary-menu',
-					'container_class' => 'hidden mt-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+					'container_class' => 'hidden mt-8 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 					'menu_class'      => 'lg:flex lg:-mx-4',
 					'theme_location'  => 'primary',
-					'li_class'        => ' text-slate-900  uppercase bold text-3xl mb-2 lg:mb-0 md:text-base lg:mx-4 hover:text-primary hover:underline hover:decoration-wavy hover:underline-offset-4',
+					'li_class'        => ' text-slate-900  uppercase bold text-2xl mb-4 lg:mb-0 md:text-base lg:mx-4 hover:text-primary hover:underline hover:decoration-wavy hover:underline-offset-4',
 					'fallback_cb'     => false,
 				)
 			);
