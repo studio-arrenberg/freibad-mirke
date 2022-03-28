@@ -67,6 +67,31 @@
 				)
 			);
 			?>
+			<!-- Begin Mailchimp Signup Form -->
+				<div id="mc_embed_signup" class="mt-4">
+					<form action="https://freibad-mirke.us14.list-manage.com/subscribe/post?u=019ee74186a81164d81b45391&amp;id=6ec16cff59" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="" novalidate>
+						<div id="mc_embed_signup_scroll">
+					<div class="mc-field-group">
+						<!-- <label for="mce-EMAIL">E-Mail Adresse  <span class="asterisk">*</span> -->
+						</label>
+						<input type="email" value="" name="EMAIL" class="text-primary required email px-4 py-2 placeholder:text-primary" id="mce-EMAIL" placeholder="Deine E-Mail Adresse">
+					</div>
+						<div id="mce-responses" class="clear foot">
+							<div class="response" id="mce-error-response" style="display:none"></div>
+							<div class="response" id="mce-success-response" style="display:none"></div>
+						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_019ee74186a81164d81b45391_6ec16cff59" tabindex="-1" value=""></div>
+							<div class="optionalParent">
+								<div class="clear foot">
+									<input type="submit" value="Anmelden" name="subscribe" id="mc-embedded-subscribe" class=" mt-4 bg-transparent hover:bg-secondary  hover:text-white py-1 cursor-pointer px-4 border border-white hover:border-transparent " >
+									
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<!--End mc_embed_signup-->
 		</div>
 
 

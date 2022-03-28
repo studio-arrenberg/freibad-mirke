@@ -134,23 +134,26 @@ require_once dirname( __FILE__ ) .'/advanced-custom-fields/pages.php'; # Seiten 
  * Triggers on save, edit or update of published posts.
  * Works in "Quick Edit", but not bulk edit.
  */
-function sync_acf_post_title($post_id, $post, $update) {
-	$acf_title = get_field('vorname', $post_id);
-	if( !empty( $acf_title )){
 
-		if ( $title ) {
-			$title = $acf_title;
-		} else {
-			$title = get_field('vorname')." ".get_field("nachname");
-		}
-		
-		$content = array(
-			'ID' => $post_id,
-			'post_title' => $title
-		);
-		remove_action('save_post', 'sync_acf_post_title'); // prevent a loop
-		wp_update_post($content);
-	}; 
+ function sync_acf_post_title($post_id, $post, $update) {
+	if( function_exists('get_field') ) {
+		$acf_title = get_field('vorname', $post_id);
+		if( !empty( $acf_title )){
+
+			if ( $title ) {
+				$title = $acf_title;
+			} else {
+				$title = get_field('vorname')." ".get_field("nachname");
+			}
+			
+			$content = array(
+				'ID' => $post_id,
+				'post_title' => $title
+			);
+			remove_action('save_post', 'sync_acf_post_title'); // prevent a loop
+			wp_update_post($content);
+		}; 
+	};
 }
 add_action('save_post', 'sync_acf_post_title', 10, 3);
 
@@ -365,3 +368,13 @@ function my_excerpt_length($length){
 	return 30;
 	}
 add_filter("excerpt_length", "my_excerpt_length");
+
+
+
+// custom image sizes/ratios 
+	// https://developer.wordpress.org/reference/functions/add_image_size/
+	// with array( 'center', 'center' ) = (cropped to fit)
+
+	// square (1:1)
+	add_image_size( 'square_s', 400, 400, array( 'center', 'center' ));
+	add_image_size( 'square_l', 600, 600, array( 'center', 'center' ));
