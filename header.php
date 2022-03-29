@@ -36,6 +36,7 @@
 <!-- Echo Current Page Template -->
 <?php do_action( 'tailpress_site_before' ); 
 echo "<script>console.log('Template".get_page_template(). "' );</script>";
+echo "<script>console.log('".get_home_url(). "' );</script>";
 ?>
 
 <div id="page" class="min-h-screen flex flex-col ">

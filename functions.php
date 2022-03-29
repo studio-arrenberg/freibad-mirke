@@ -266,9 +266,9 @@ function setup_second_footer_menu() {
 	}
 }
 
-add_action( 'after_setup_theme', 'setup_main_menu' );
-add_action( 'after_setup_theme', 'setup_first_footer_menu' );
-add_action( 'after_setup_theme', 'setup_second_footer_menu' );
+add_action( 'after_setup_theme', 'setup_main_menu' , 6);
+add_action( 'after_setup_theme', 'setup_first_footer_menu', 6 );
+add_action( 'after_setup_theme', 'setup_second_footer_menu', 6 );
 
 /**
  *
@@ -315,11 +315,11 @@ add_filter( 'display_post_states', 'get_custom_post_type_template', 1, 1);
  *
  */
 
-add_action( 'after_setup_theme', 'create_pages' );
+add_action( 'after_setup_theme', 'create_pages', 2 );
 function create_pages() {
 
     $pages = array(
-        0 => array('title' => __('Freibad',"freibadmirke"), 'slug' => 'startseite'),
+        0 => array('title' => __('Projekt',"freibadmirke"), 'slug' => 'startseite'),
         1 => array('title' => __('Veranstaltungen', "freibadmirke"), 'slug' => 'veranstaltungen'),
         2 => array('title' => __('Verein',"freibadmirke"), 'slug' => 'verein'),
         3 => array('title' => __('Unterstützen',"freibadmirke"), 'slug' => 'unterstuetzen'),

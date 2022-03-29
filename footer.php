@@ -68,7 +68,8 @@
 			);
 			?>
 			<!-- Begin Mailchimp Signup Form -->
-				<div id="mc_embed_signup" class="mb-6 mt-3 md:mb-0 md:mt-4">
+				<div id="mc_embed_signup" class="mb-6 mt-3 md:mb-0 md:mt-6">
+					<p class="mb-2">Für den Newsletter registrieren</p>
 					<form action="https://freibad-mirke.us14.list-manage.com/subscribe/post?u=019ee74186a81164d81b45391&amp;id=6ec16cff59" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="" novalidate>
 						<div id="mc_embed_signup_scroll">
 					<div class="mc-field-group">
@@ -83,7 +84,7 @@
 						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_019ee74186a81164d81b45391_6ec16cff59" tabindex="-1" value=""></div>
 							<div class="optionalParent">
 								<div class="clear foot">
-									<input type="submit" value="Anmelden" name="subscribe" id="mc-embedded-subscribe" class=" mt-4 bg-transparent hover:bg-secondary  hover:text-white py-1 cursor-pointer px-4 border border-white hover:border-transparent " >
+									<input type="submit" value="Anmelden" name="subscribe" id="mc-embedded-subscribe" class=" mt-2 bg-transparent hover:bg-secondary  hover:text-white py-1 cursor-pointer px-4 border border-white hover:border-transparent " >
 									
 								</div>
 							</div>
@@ -98,9 +99,9 @@
 		<div class="text-slate-50"><b>
 			<h4 class="font-bold mb-3">Kontakt</h4>
 			<p class="text-slate-50 font-normal">
-			E-Mail: info@promirke.de<br>
-			Telefon: 02104 8311<br>
-			Mobil: 02104 8311<br>
+			E-Mail: <a href="mailto:info@pro-mirke.de">info@pro-mirke.de</a><br>
+			Csilla Letay: <a href="tel:+49176 62228840">0176 62228840</a><br>
+			Heiner Mokroß: <a href="tel:+492104 831117">02104 831117</a><br>
 		</div>
 	</div>
 	<div class="container max-w-screen-xl  mx-auto flex justify-between md:grid  md:grid-cols-3 mt-8  text-sm ">

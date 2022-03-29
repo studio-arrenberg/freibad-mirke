@@ -554,6 +554,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 2rem;
 }
 
+.m-24 {
+  margin: 6rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -562,11 +571,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .my-12 {
@@ -664,16 +668,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: -0.5rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
 }
 
 .block {
@@ -867,9 +871,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(77 186 189 / var(--tw-border-opacity));
 }
 
+.border-blue-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.bg-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .bg-primary {
@@ -882,10 +896,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.bg-transparent {
-  background-color: transparent;
-}
-
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
@@ -896,9 +906,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-light {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-cover {
@@ -942,11 +951,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.75rem;
 }
 
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .py-\[20px\] {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -975,6 +979,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .pt-12 {
@@ -1071,9 +1085,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: -0.025em;
 }
 
-.text-gray-800 {
+.text-blue-500 {
   --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1081,14 +1095,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 .text-slate-50 {
   --tw-text-opacity: 1;
   color: rgb(248 250 252 / var(--tw-text-opacity));
-}
-
-.text-primary {
-  --tw-text-opacity: 1;
-  color: rgb(77 186 189 / var(--tw-text-opacity));
 }
 
 .text-slate-200 {
@@ -1116,14 +1130,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(251 127 67 / var(--tw-text-opacity));
 }
 
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(77 186 189 / var(--tw-text-opacity));
+}
+
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
-}
-
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .text-primary-dark {
@@ -1139,6 +1153,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.text-blue-700 {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
 .antialiased {
@@ -1466,6 +1485,57 @@ header .current-menu-item {
   animation: rotating 4s linear infinite;
 }
 
+.placeholder\:ml-4::-moz-placeholder {
+  margin-left: 1rem;
+}
+
+.placeholder\:ml-4:-ms-input-placeholder {
+  margin-left: 1rem;
+}
+
+.placeholder\:ml-4::placeholder {
+  margin-left: 1rem;
+}
+
+.placeholder\:p-4::-moz-placeholder {
+  padding: 1rem;
+}
+
+.placeholder\:p-4:-ms-input-placeholder {
+  padding: 1rem;
+}
+
+.placeholder\:p-4::placeholder {
+  padding: 1rem;
+}
+
+.placeholder\:px-4::-moz-placeholder {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.placeholder\:px-4:-ms-input-placeholder {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.placeholder\:px-4::placeholder {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.placeholder\:italic::-moz-placeholder {
+  font-style: italic;
+}
+
+.placeholder\:italic:-ms-input-placeholder {
+  font-style: italic;
+}
+
+.placeholder\:italic::placeholder {
+  font-style: italic;
+}
+
 .placeholder\:text-primary::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(77 186 189 / var(--tw-text-opacity));
@@ -1485,14 +1555,19 @@ header .current-menu-item {
   border-color: transparent;
 }
 
-.hover\:bg-secondary:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 127 67 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-blue-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 127 67 / var(--tw-bg-opacity));
 }
 
 .hover\:text-dark:hover {
@@ -1577,6 +1652,14 @@ header .current-menu-item {
 
   .md\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .md\:mt-8 {
+    margin-top: 2rem;
+  }
+
+  .md\:mt-6 {
+    margin-top: 1.5rem;
   }
 
   .md\:block {
