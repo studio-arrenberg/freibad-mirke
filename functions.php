@@ -218,7 +218,7 @@ function setup_first_footer_menu() {
 	
 		// Set up default menu items
 		wp_update_nav_menu_item( $menu_id, 0, array(
-			'menu-item-title'   =>  __( 'Freibad', 'freibadmirke' ),
+			'menu-item-title'   =>  __( 'Projekt', 'freibadmirke' ),
 			'menu-item-classes' => 'freibad',
 			'menu-item-url'     => home_url( '/' ), 
 			'menu-item-status'  => 'publish'
@@ -287,7 +287,7 @@ function get_custom_post_type_template( $page_template ) {
 	}else if ($title == "Veranstaltungen"){
         $post_states[] = $prefix.'Veranstaltungen';
 		$page_template = get_stylesheet_directory() . "/pages/page-veranstaltungen.php";
-    }else if ($title == "Freibad"){
+    }else if ($title == "Projekt"){
         $post_states[] = $prefix.'Freibad';
 		$page_template = get_stylesheet_directory() . "/pages/page-startseite.php";
     }else if ($title == "Unterstützen"){
