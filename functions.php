@@ -354,7 +354,7 @@ function create_pages() {
  * Set Home Page Settings
  *
  */
-$about = get_page_by_title( 'Freibad' );
+$about = get_page_by_title( 'Projekt' );
 update_option( 'page_on_front', $about->ID );
 update_option( 'show_on_front', 'page' );
 
