@@ -1,3 +1,12 @@
+<?php
+/**
+ * 
+ * Template Name: Events [Default]
+ * Template Post Type: event
+ *
+ */
+?>
+
 <div class="bg-slate-50 " id="post-<?php the_ID(); ?>" > <?php// post_class(); ?>
 
 	<div class=" z-0 absolute left-0 right-0 bottom-0 top-[112px] lg:top-[152px]">

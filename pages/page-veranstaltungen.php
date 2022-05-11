@@ -42,7 +42,7 @@ get_header(); ?>
       $args = [
       'post_type' => 'event',
       'post_status' => 'publish',
-      'posts_per_page' => 4,
+      'posts_per_page' => 10,
       'orderby' => 'date',
       'order' => 'DESC',
       ];

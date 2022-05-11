@@ -29,6 +29,7 @@ function tailpress_setup() {
     add_theme_support( 'custom-logo' );
 	add_theme_support( 'post-thumbnails' );
 
+
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'wp-block-styles' );
 
@@ -372,9 +373,10 @@ add_filter("excerpt_length", "my_excerpt_length");
 
 
 // custom image sizes/ratios 
-	// https://developer.wordpress.org/reference/functions/add_image_size/
-	// with array( 'center', 'center' ) = (cropped to fit)
+// https://developer.wordpress.org/reference/functions/add_image_size/
+// with array( 'center', 'center' ) = (cropped to fit)
 
-	// square (1:1)
-	add_image_size( 'square_s', 400, 400, array( 'center', 'center' ));
-	add_image_size( 'square_l', 600, 600, array( 'center', 'center' ));
+// square (1:1)
+
+add_image_size( 'square_s', 400, 400, array( 'center', 'center' ));
+add_image_size( 'fullwidth', 1920, 1080, array( 'center', 'center' ));
