@@ -85,7 +85,7 @@ get_header();
                 /**
                  * Alle aktuellen Veranstaltungen im Freibad Mirke
                  */
-                $today = date('Y-m-d H:i:s');
+                $today = date('Y-m-d');
 
                 $args = [
                 'post_type' => 'event',
@@ -94,14 +94,17 @@ get_header();
                 'meta_key'			=> 'date',
 	              'orderby'			=> 'meta_value',
 	              'order'				=> 'ASC',
-                // 'meta_query' => array(
-                //   array(
-                //      'key'       => 'date',
-                //      'compare'   => '<=',
-                //      'value'     => $today,
-                //  )
-                // )
+                'compare' => '>=',
+                'meta_query' => array(
+                  array(
+                      'key'       => 'date',
+                      'compare'   => '>=',
+                      'value'     => $today,
+                  )
+                 )
                 ];
+
+
 
                 $loop = new WP_Query($args);
                 if($loop->have_posts()){?>
