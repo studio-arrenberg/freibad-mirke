@@ -43,7 +43,8 @@ get_header(); ?>
       'post_type' => 'event',
       'post_status' => 'publish',
       'posts_per_page' => 10,
-      'orderby' => 'date',
+      'meta_key'          => 'event-date',
+      'orderby'           => 'meta_value',
       'order' => 'DESC',
       ];
 

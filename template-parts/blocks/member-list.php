@@ -26,7 +26,7 @@ $text = get_field('text') ?: 'Hier steht der Titel.';
             //     echo "<script>console.log('Jetzt schon')</script>";
             // };
             $vorname = get_field( 'vorname', $featured_post->ID ) ?: "Vorname";
-            $nachname = get_field( 'nachname', $featured_post->ID ) ?: "Vorname";
+            $nachname = get_field( 'nachname', $featured_post->ID ) ?: "Nachname";
             $phone = get_field( 'phone', $featured_post->ID ) ?: "Telefonnummer";
             $mail = get_field( 'mail', $featured_post->ID ) ?: "E-Mail";
             // $image = get_field( 'image', $featured_post->ID );

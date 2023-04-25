@@ -44,8 +44,7 @@ get_header();
 
         $loop = new WP_Query($args);
         
-        while ($loop->have_posts()):
-        $loop->the_post(); 
+        while ($loop->have_posts()): $loop->the_post(); 
     ?>
       <div id="post-<?php the_ID(); ?>" <?php post_class( ' block mb-12' ); ?>>
           <a class="flex flex-wrap" href="<?php echo  esc_url( get_permalink())?>"> 
