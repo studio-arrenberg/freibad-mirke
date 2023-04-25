@@ -66,7 +66,7 @@ get_header(); ?>
                   <?php endif; ?>
 
                   <div class="w-full p-6 md:w-3/5 md:pl-8 md:pt-6">
-                    <p class="text-secondary text-lg font-light leading-4">Veranstaltung am <?php the_date(); ?></p>
+                    <p class="text-secondary text-lg font-light leading-4">Veranstaltung am <?php the_field("date"); ?></p>
 
                       <h2 class="text-primary entry-title text-xl md:text-2xl font-extrabold leading-tight  mb-4">
                         <?php the_title(); ?>
