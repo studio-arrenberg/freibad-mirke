@@ -84,27 +84,18 @@ get_header();
                 /**
                  * Alle aktuellen Veranstaltungen im Freibad Mirke
                  */
-                $today = date('Y-m-d');
-
+                
                 $args = [
                 'post_type' => 'event',
                 'post_status' => 'publish',
                 'posts_per_page' => 10,
-                'meta_key'			=> 'date',
-	              'orderby'			=> 'meta_value',
-	              'order'				=> 'ASC',
-                'compare' => '>=',
-                'meta_query' => array(
-                  array(
-                      'key'       => 'date',
-                      'compare'   => '>=',
-                      'value'     => $today,
-                  )
-                 )
+                'meta_key'    => 'date',                
+		            'meta_value'   => date('Y-m-d'), // change to how "event date" is stored
+		            'meta_compare' => '>=',            
+		            'orderby'   => 'meta_value',  
+      	        'order' => 'ASC',
                 ];
-
-
-
+                
                 $loop = new WP_Query($args);
                 if($loop->have_posts()){?>
                   <h2 class="text-3xl mt-8 mb-6 md:mt-60  md:mb-16  font-bold  text-secondary ">Kommende Veranstaltungen im Freibad Mirke</h2>

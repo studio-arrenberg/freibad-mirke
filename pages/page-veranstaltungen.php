@@ -37,15 +37,16 @@ get_header(); ?>
       <?php
       /**
        * Alle aktuellen Veranstaltungen im Freibad Mirke
-       */
-
+       */                   
       $args = [
       'post_type' => 'event',
       'post_status' => 'publish',
-      'posts_per_page' => 10,
-      'meta_key'          => 'event-date',
-      'orderby'           => 'meta_value',
-      'order' => 'DESC',
+      'posts_per_page' => 10,              	        
+      'meta_key'    => 'date',                
+      'meta_value'   => date('Y-m-d'),
+      'meta_compare' => '>=',            
+      'orderby'   => 'meta_value',  
+      'order' => 'ASC',
       ];
 
       $loop = new WP_Query($args);
