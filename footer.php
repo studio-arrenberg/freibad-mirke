@@ -100,8 +100,7 @@
 			<h4 class="font-bold mb-3">Kontakt</h4>
 			<p class="text-slate-50 font-normal">
 			E-Mail: <a href="mailto:info@pro-mirke.de">info@pro-mirke.de</a><br>
-			Csilla Letay: <a href="tel:+49176 62228840">0176 62228840</a><br>
-			Heiner Mokroß: <a href="tel:+492104 831117">02104 831117</a><br>
+			Telefon: <a href="tel:+49176 62228840">0202 87005509</a><br>
 		</div>
 	</div>
 	<div class="container max-w-screen-xl  mx-auto flex justify-between md:grid  md:grid-cols-3 mt-8  text-sm ">

@@ -68,7 +68,7 @@ get_header(); ?>
 
                             <div class="w-full py-6 md:w-3/5 md:pl-8 md:pt-6">
                               <div class="mb-4">
-                                <p class=" text-gray-700 text-sm font-light "><?php echo get_the_author(); ?> am <?php the_date(); ?></p>
+                                <p class=" text-gray-700 text-sm font-light "><?php the_date(); ?></p>
                                 <h2 class="text-primary entry-title text-xl md:text-2xl font-extrabold leading-tight mb-1">
                                   <?php the_title(); ?>
                                 </h2>
